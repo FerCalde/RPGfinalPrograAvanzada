@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: 9668c1f61797fcb4f9cfaa6ca4cc03bd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2192450021786810173
+    second: Zombie
+  - first:
+      213: -7537196482120660328
+    second: Skeleton
+  - first:
+      213: -860468679390908754
+    second: SkeletonFace
+  - first:
+      213: -7945901444079236628
+    second: ZombieFace
+  - first:
+      213: -8421458170528590454
+    second: EntFace
+  - first:
+      213: -1147401495359466748
+    second: Ent
+  - first:
+      213: 8414478535512612329
+    second: Wolf
+  - first:
+      213: 3714015224569861163
+    second: WoldFace
+  - first:
+      213: -7844560889915226194
+    second: PlantFace
+  - first:
+      213: 4326287474489854147
+    second: Plant
+  - first:
+      213: 7877921557971618100
+    second: Goblins
+  - first:
+      213: 5366457973745487733
+    second: GoblinsFaces
+  - first:
+      213: 572134458542851419
+    second: Platform
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zombie
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 276
+        width: 90
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5072578, y: 0.10572059}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7febb5341b92c20419e8e1e02f7d73aa
+      internalID: 2192450021786810173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 252
+        width: 115
+        height: 137
+      alignment: 9
+      pivot: {x: 0.5170401, y: 0.22822693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117270c4d5234154795b31b9af98752c
+      internalID: -7537196482120660328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonFace
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 338
+        width: 40
+        height: 51
+      alignment: 9
+      pivot: {x: 0.45100936, y: 0.4615754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1230cabe965f8944a863021f637d8b0
+      internalID: -860468679390908754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZombieFace
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 291
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6c641ef38460349be64ca0ab0bbdc0
+      internalID: -7945901444079236628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EntFace
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 243
+        width: 47
+        height: 42
+      alignment: 9
+      pivot: {x: 0.43050954, y: 0.45334154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0d12554d17b7f4d80208763df93ea5
+      internalID: -8421458170528590454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ent
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 132
+        width: 103
+        height: 103
+      alignment: 9
+      pivot: {x: 0.53805107, y: 0.10935511}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6911d75f9295bb74e887004852037300
+      internalID: -1147401495359466748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wolf
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 126
+        width: 106
+        height: 101
+      alignment: 9
+      pivot: {x: 0.4938376, y: 0.21543355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c78fcc90a398194299a128db534197b
+      internalID: 8414478535512612329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoldFace
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 180
+        width: 46
+        height: 60
+      alignment: 9
+      pivot: {x: 0.4005983, y: 0.4020185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f3ef5c90cd382049bec7d2049e37843
+      internalID: 3714015224569861163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantFace
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 134
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c18d319a09fc294386f1833a02cb2cb
+      internalID: -7844560889915226194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 14
+        width: 90
+        height: 90
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.16613784}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d558b50e3f3e54a8864e42e7212a74
+      internalID: 4326287474489854147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblins
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 10
+        width: 113
+        height: 95
+      alignment: 9
+      pivot: {x: 0.5231225, y: 0.10119862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4a2c0dfb1c25940b744815fd7c1991
+      internalID: 7877921557971618100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoblinsFaces
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 95
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ccac8e144b1e6a439be41369264a013
+      internalID: 5366457973745487733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 31
+        width: 76
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b55089752d98f499ebbf85b4f79df1
+      internalID: 572134458542851419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
