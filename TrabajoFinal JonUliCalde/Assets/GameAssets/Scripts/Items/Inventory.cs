@@ -15,7 +15,7 @@ namespace Inventarios {
         }
         #endregion
 
-        public enum DisplayFilter {ALL,CONSUMABLES,EQUIPABLES }
+        public enum DisplayFilter {ALL,CONSUMABLES,EQUIPABLES, IMPORTANTKEYS }
         public DisplayFilter filter;
         
         //Referencias UI
@@ -123,6 +123,11 @@ namespace Inventarios {
         public void BtnShowConsumables()
         {
             filter = DisplayFilter.CONSUMABLES;
+            UpdateDisplayedItems();
+        }
+        public void BtnShowImportantKeys()
+        {
+            filter = DisplayFilter.IMPORTANTKEYS;
             UpdateDisplayedItems();
         }
 

@@ -38,17 +38,17 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        startPanel.SetActive(true);
+        //startPanel.SetActive(true);
     }
 
     public void StartGame() {
-        int waves = int.Parse(wavesIField.text);
-        int enemies = int.Parse(enemiesIField.text);
-        startPanel.SetActive(false);
+        //  int waves = int.Parse(wavesIField.text);
+        //  int enemies = int.Parse(enemiesIField.text);
+        //startPanel.SetActive(false);
         FindObjectOfType<HeroEquipmentDisplay>().OnStatsChange += CombatController.instance.heroDisplay.ActualiceDisplayData;
 
         //Invocar el evento OnCombatStart enviando los parámetros.
-        OnCombatStart?.Invoke(this, new StartGameArgs(waves, enemies));
+        //OnCombatStart?.Invoke(this, new StartGameArgs(waves, enemies));
         
     }
 
