@@ -21,6 +21,10 @@ namespace Inventarios
     {
         void Consume();
     }
+    public interface IDoorInteractive
+    {
+
+    }
     
 }
 
