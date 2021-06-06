@@ -42,7 +42,7 @@ public abstract class Character
         hasStun = _hasStun;
         hasRest = _hasRest;
         hasNormalAttack = _hasNA;
-}
+    }
 
     public virtual void TakeDamage(int amount)
     {
