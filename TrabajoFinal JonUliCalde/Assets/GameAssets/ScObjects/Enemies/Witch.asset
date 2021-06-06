@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c324e5977a23f4d809a6f264de56a0, type: 3}
   m_Name: Witch
   m_EditorClassIdentifier: 
-  _enemyName: 
-  _attack: 0
-  _crit: 0
-  _hasPoisonAttack: 0
+  _enemyName: Witch
+  _attack: 10
+  _crit: 0.2
+  _hasPoisonAttack: 1
   _hasStunAttack: 0
-  _hasRestAttack: 0
+  _hasRestAttack: 1
   _hasNormalAttack: 0

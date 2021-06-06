@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfd4be7e4754df459c7a3363cd9e11a, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  _playerName: 
-  _attack: 0
-  _crit: 0
-  _hasPoisonAttack: 0
-  _hasStunAttack: 0
-  _hasRestAttack: 0
-  _hasNormalAttack: 0
+  _playerName: Player
+  _attack: 25
+  _crit: 0.3
+  _hasPoisonAttack: 1
+  _hasStunAttack: 1
+  _hasRestAttack: 1
+  _hasNormalAttack: 1

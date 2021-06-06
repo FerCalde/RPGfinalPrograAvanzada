@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c324e5977a23f4d809a6f264de56a0, type: 3}
   m_Name: Bandit
   m_EditorClassIdentifier: 
-  _enemyName: 
-  _attack: 0
-  _crit: 0
+  _enemyName: Bandit
+  _attack: 20
+  _crit: 0.2
   _hasPoisonAttack: 0
   _hasStunAttack: 0
-  _hasRestAttack: 0
-  _hasNormalAttack: 0
+  _hasRestAttack: 1
+  _hasNormalAttack: 1
