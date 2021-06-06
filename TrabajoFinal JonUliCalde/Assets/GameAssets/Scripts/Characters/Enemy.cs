@@ -6,7 +6,7 @@ namespace enemyStatusConditions
 {
     public class Enemy : Character
     {
-        public Enemy(ScEnemy data) : base(data._enemyName, data._attack, data._crit, data._hasPoisonAttack, data._hasStunAttack, data._hasRestAttack, data._hasNormalAttack)
+        public Enemy(ScEnemy data) : base(data._enemyName, data._attack, data._crit)
         {
 
         }
@@ -17,6 +17,10 @@ namespace enemyStatusConditions
             {
                 //GameObject.FindObjectOfType<EnemyWaves>().EnemyIsDead();
             }
+        }
+        public virtual void ChoseEnemyAction(int amount, Character targetToGo)
+        {
+            RegularAttack(amount, targetToGo);
         }
     }
 }
