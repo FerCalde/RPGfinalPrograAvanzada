@@ -26,7 +26,7 @@ namespace enemyStatusConditions
 
 
 
-        void ShowContent(object sender, GameController.StartGameArgs e)
+        void ShowContent(object sender, StartGameArgs e)
         {
             this.waves = e.enemyWaves;
             enemiesPerWave = e.enemiesPerWaves;
@@ -62,8 +62,8 @@ namespace enemyStatusConditions
 
             if (enemyWavesArr[actualWave - 1].count > 0)
             {
-                //CombatController.instance.enemyDisplay.characterInstance = enemyWavesArr[actualWave - 1].QuitarDeLaFila();
-                //CombatController.instance.enemyDisplay.ActualiceDisplayData();
+                //CombatManager.instance.enemyDisplay.characterInstance = enemyWavesArr[actualWave - 1].QuitarDeLaFila();
+                //CombatManager.instance.enemyDisplay.ActualiceDisplayData();
 
                 if ((everyHowManyWavesToHealPlayer % actualWave).Equals(0)) //Si el resto es 0. Es decir, si por ejemplo 3/3...
                 {

@@ -43,22 +43,24 @@ public class GameController : MonoBehaviour
 
     }
 
-    public class StartGameArgs : EventArgs
+    
+
+}
+
+public class StartGameArgs : EventArgs
+{
+    public int enemyWaves;
+    public int enemiesPerWaves;
+    public int everyHowManyWavesToHeal;
+
+    public StartGameArgs(int enemyWaves, int enemiesPerWave, int everyHowManyWavesToHeal)
     {
-        public int enemyWaves;
-        public int enemiesPerWaves;
-        public int everyHowManyWavesToHeal;
-
-        public StartGameArgs(int enemyWaves, int enemiesPerWave, int everyHowManyWavesToHeal)
-        {
-            this.enemyWaves = enemyWaves;
-            this.enemiesPerWaves = enemiesPerWave;
-            this.everyHowManyWavesToHeal = everyHowManyWavesToHeal;
-
-
-        }
+        this.enemyWaves = enemyWaves;
+        this.enemiesPerWaves = enemiesPerWave;
+        this.everyHowManyWavesToHeal = everyHowManyWavesToHeal;
 
 
     }
+
 
 }

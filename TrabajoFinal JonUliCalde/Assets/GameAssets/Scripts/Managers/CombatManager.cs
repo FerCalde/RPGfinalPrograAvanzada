@@ -6,8 +6,21 @@ using UnityEngine;
 
 namespace enemyStatusConditions
 {
+
+    
+
+
     public class CombatManager : MonoBehaviour
     {
+
+        #region singleton
+        public static CombatManager instance;
+        private void Awake()
+        {
+            instance = this;
+        }
+        #endregion
+
         enum TurnoCombat
         {
             PlayerTurn,
