@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Enemy", menuName = "Enemy/new Enemy", order = 0)]
+[CreateAssetMenu(fileName = "Enemy", menuName = "Characters/Enemy/new Enemy", order = 0)]
 public class ScEnemy : ScriptableObject
 {
     public string _enemyName;
