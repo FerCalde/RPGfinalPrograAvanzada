@@ -11,6 +11,7 @@ namespace enemyStatusConditions
     public class DisplayCharacter : MonoBehaviour
     {
 
+
         Character _character;
         [HideInInspector]
         public Character characterInstance
@@ -36,16 +37,16 @@ namespace enemyStatusConditions
 
         [SerializeField] Text nameTxt;
         [SerializeField] Text attackTxt;
-        [SerializeField] Text defenseTxt;
+
 
         [SerializeField] Image hp;
         [SerializeField] float critico;
 
         public void ActualiceDisplayData()
         {
-            /*nameTxt.text = characterInstance.characerName.ToString();
-            attackTxt.text = characterInstance.attak.ToString();
-            defenseTxt.text = characterInstance.defense.ToString();*/
+            nameTxt.text = characterInstance.name.ToString();
+            attackTxt.text = characterInstance.attack.ToString();
+
 
             critico = characterInstance.critChance;
             ActualiceHp(characterInstance.hp);

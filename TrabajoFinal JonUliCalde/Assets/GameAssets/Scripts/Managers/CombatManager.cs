@@ -13,6 +13,21 @@ namespace enemyStatusConditions
     public class CombatManager : MonoBehaviour
     {
 
+        public delegate void NextTurn();
+        public event NextTurn OnNextTurn;
+
+
+        public delegate void LifeDelegate(int basicDamage, float critChance, ref int total);
+        public event LifeDelegate lifeDelegate;
+
+
+        public DisplayCharacter dCPlayer;
+        public DisplayCharacter dCEnemy;
+
+
+
+        int totalDamage = 0;
+
         #region singleton
         public static CombatManager instance;
         private void Awake()
@@ -21,14 +36,78 @@ namespace enemyStatusConditions
         }
         #endregion
 
-        enum TurnoCombat
+        public enum TurnoCombat
         {
             PlayerTurn,
             EnemyTurn,
             GameOverTurn
         }
 
-        [SerializeField] TurnoCombat turnoActual;
+        public TurnoCombat turnoActual;
+
+
+        bool hasMissed;
+        private void Start()
+        {
+            hasMissed = false;
+            OnNextTurn += CambiarTurno;
+
+            lifeDelegate += BasicHit;
+            lifeDelegate += CriticalHit;
+            lifeDelegate += MissChance;
+
+
+        }
+
+        void BasicHit(int basicDamage, float critChance, ref int total)
+        {
+
+            basicDamage = Random.Range((basicDamage - 5), (basicDamage + 6));
+            total += basicDamage;
+        }
+
+
+        //Critical
+        void CriticalHit(int basicDamage, float critChance, ref int total)
+        {
+            print("basicDamage value: " + basicDamage);
+
+
+            int crit = Random.Range(1, 101);
+
+            if (critChance > crit)
+            {
+                print("Crits");
+                total *= 2;
+            }
+
+
+
+
+        }
+
+
+
+
+        //miss
+        void MissChance(int basicDamage, float critChance, ref int total)
+        {
+            print("critChance value: " + critChance);
+
+            int missChance = Random.Range(0, 3);
+
+            if (missChance.Equals(0)) //if missess... 33% chance
+            {
+                print("Misses");
+                hasMissed = true;
+                total = 0;
+            }
+            else
+                hasMissed = false;
+
+            //if character is stunned, missChance = 66%; 
+        }
+
 
 
         void CambiarTurno()
@@ -45,7 +124,24 @@ namespace enemyStatusConditions
 
         void SetCombatTurn(Character atacante, Character defensor)
         {
+            StartCoroutine(DoC(atacante, defensor));
+        }
 
+        IEnumerator DoC(Character atacante, Character defensor)
+        {
+            CalculateAttackDamage(atacante);
+
+            yield return new WaitForSeconds(2);
+
+            OnNextTurn?.Invoke();
+
+        }
+
+        void CalculateAttackDamage(Character attacker)
+        {
+            totalDamage = 0;
+
+            lifeDelegate?.Invoke(attacker.attack, attacker.critChance, ref totalDamage);
         }
 
         void EmpezarCombate()
@@ -69,6 +165,13 @@ namespace enemyStatusConditions
         {
 
         }
+
+        public void EndGame()
+        {
+            turnoActual = TurnoCombat.GameOverTurn;
+        }
+
+        
 
     }
 
