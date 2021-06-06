@@ -62,28 +62,30 @@ namespace enemyStatusConditions
 
             if (enemyWavesArr[actualWave - 1].count > 0)
             {
-                //CombatManager.instance.enemyDisplay.characterInstance = enemyWavesArr[actualWave - 1].QuitarDeLaFila();
-                //CombatManager.instance.enemyDisplay.ActualiceDisplayData();
+                CombatManager.instance.dCEnemy.characterInstance = enemyWavesArr[actualWave - 1].QuitarDeLaFila();
+                CombatManager.instance.dCEnemy.ActualiceDisplayData();
 
                 if ((everyHowManyWavesToHealPlayer % actualWave).Equals(0)) //Si el resto es 0. Es decir, si por ejemplo 3/3...
                 {
                     //Actualizamos texto de información
                     //Recuperamos vida jugador.
+                    //yield return new WaitForSeconds(3);
                 }
 
-                yield return new WaitForSeconds(3);
+                
             }
             else
             {
                 actualWave++;
                 if (enemyWavesArr.Length >= actualWave)
                 {
-                    /*CombatController.instance.enemyDisplay.characterInstance = enemyWavesArr[actualWave - 1].QuitarDeLaFila();
-                    CombatController.instance.enemyDisplay.ActualiceDisplayData();*/
+                    CombatManager.instance.dCEnemy.characterInstance = enemyWavesArr[actualWave - 1].QuitarDeLaFila();
+                    CombatManager.instance.dCEnemy.ActualiceDisplayData();
                 }
                 else
                 {
-                    //CombatController.instance.combatTurn = CombatController.CombatTurns.GAMEOVER;
+                    CombatManager.instance.EndGame();
+                    
                 }
             }
         }
