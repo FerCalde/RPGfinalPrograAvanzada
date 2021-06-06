@@ -2,21 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace enemyStatusConditions
 {
-    public class Player : Character, IStun , IPoison, IRest
+    public class FullEnemy : Enemy, IStun, IPoison, IRest
     {
-        public Player(ScPlayer data) : base(data._playerName, data._attack, data._crit) { }
-        public override void TakeDamage(int ammount)
-        {
-            base.TakeDamage(ammount);
-
-            if (hp == 0)
-            {
-                //CombatController.instance.combatTurn = CombatController.CombatTurns.GAMEOVER;
-            }
-        }
+        public FullEnemy(ScAllAttacksEnemy data) : base(data) { }
         public void StunAttack(int turns, Character targetToGo)
         {
             targetToGo.maxStunedTurns = turns;
@@ -27,8 +17,7 @@ namespace enemyStatusConditions
         }
         public void GetRest(int amount)
         {
-            hp += amount; 
+            hp += amount;
         }
     }
 }
-

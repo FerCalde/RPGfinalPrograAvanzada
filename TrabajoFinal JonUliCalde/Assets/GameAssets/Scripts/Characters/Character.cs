@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace enemyStatusConditions
 {
-    public abstract class Character : EnemyStatusCondition, IStun, IPoison, IRegularAttack, IRest
+    public abstract class Character : EnemyStatusCondition, IRegularAttack
     {
         public delegate void HpDelegate(int hp);
         public event HpDelegate OnHpChange;
@@ -14,11 +14,6 @@ namespace enemyStatusConditions
         public string name;
         public int attack;
         public float critChance;
-        public bool hasPoison;
-        public bool hasStun;
-        public bool hasRest;
-        public bool hasNormalAttack;
-
         public int poisonedTurns = 0;
         public int maxPoisonedTurns = 0;
         public int stunedTurns = 0;
@@ -36,15 +31,11 @@ namespace enemyStatusConditions
             }
         }
 
-        public Character(string _name, int _atk, float _crit, bool _hasPoi, bool _hasStun, bool _hasRest, bool _hasNA)
+        public Character(string _name, int _atk, float _crit)
         {
             name = _name;
             attack = _atk;
             critChance = _crit;
-            hasPoison = _hasPoi;
-            hasStun = _hasStun;
-            hasRest = _hasRest;
-            hasNormalAttack = _hasNA;
         }
 
         public virtual void TakeDamage(int amount)
@@ -52,13 +43,7 @@ namespace enemyStatusConditions
             hp -= amount;
         }
 
-        
-        public virtual void GetRest(int amount)
-        {
-            hp += amount;
-        }
-
-        public virtual void CheckIsPoisoned(int amount)
+        public void CheckIsPoisoned(int amount)
         {
             if (maxPoisonedTurns > poisonedTurns)
             {
@@ -72,14 +57,7 @@ namespace enemyStatusConditions
             }
 
         }
-        public virtual void GetPoisoned(int turns)
-        {
-            maxPoisonedTurns = turns;
-        }
-
-
-
-        public virtual void CheckIsStuned()
+        public void CheckIsStuned()
         {
             if (maxStunedTurns > stunedTurns)
             {
@@ -91,10 +69,9 @@ namespace enemyStatusConditions
                 maxStunedTurns = 0;
             }
         }
-
-        public virtual void GetStuned(int turns)
+        public void RegularAttack(int amount, Character targetToGo)
         {
-            maxStunedTurns = turns;
+            targetToGo.TakeDamage(amount);
         }
     }
 }

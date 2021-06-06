@@ -9,17 +9,17 @@ namespace enemyStatusConditions
 
     public interface IStun
     {
-        void GetStuned(int turns); //This function can affect either the enemy or the player.
+        void StunAttack(int turns, Character targetToGo); //This function can affect either the enemy or the player.
     }
 
     public interface IPoison
     {
-        void GetPoisoned(int turns); //This function can affect either the enemy or the player.
+        void PoisonAttack(int turns, Character targetToGo); //This function can affect either the enemy or the player.
     }
 
     public interface IRegularAttack
     {
-        void TakeDamage(int amount);
+        void RegularAttack(int amount, Character targetToGo);
     }
 
     public interface IRest
