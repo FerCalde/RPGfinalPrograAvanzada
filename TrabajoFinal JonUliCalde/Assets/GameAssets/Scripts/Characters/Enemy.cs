@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Character
+namespace enemyStatusConditions
 {
-    public Enemy(ScEnemy data) : base(data._enemyName, data._attack, data._crit, data._hasPoisonAttack, data._hasStunAttack, data._hasRestAttack, data._hasNormalAttack)
+    public class Enemy : Character
     {
-
-    }
-    public override void TakeDamage(int ammount)
-    {
-        base.TakeDamage(ammount);
-        if (hp == 0)
+        public Enemy(ScEnemy data) : base(data._enemyName, data._attack, data._crit, data._hasPoisonAttack, data._hasStunAttack, data._hasRestAttack, data._hasNormalAttack)
         {
-            //GameObject.FindObjectOfType<EnemyWaves>().EnemyIsDead();
+
+        }
+        public override void TakeDamage(int ammount)
+        {
+            base.TakeDamage(ammount);
+            if (hp == 0)
+            {
+                //GameObject.FindObjectOfType<EnemyWaves>().EnemyIsDead();
+            }
         }
     }
 }
+

@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace enemyStatusConditions
 {
+    /*
     public abstract class EnemyStatusConditionApply : EnemyStatusCondition, IStun, IPoison
     {
 
@@ -40,5 +41,5 @@ namespace enemyStatusConditions
 
         
     }
-
+    */
 }

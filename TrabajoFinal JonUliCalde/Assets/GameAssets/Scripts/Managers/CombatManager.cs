@@ -2,54 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatManager : MonoBehaviour
+
+
+namespace enemyStatusConditions
 {
-    enum TurnoCombat
+    public class CombatManager : MonoBehaviour
     {
-        PlayerTurn,
-        EnemyTurn, 
-        GameOverTurn
-    }
-
-    [SerializeField] TurnoCombat turnoActual;
-
-
-    void CambiarTurno()
-    {
-        if (turnoActual == TurnoCombat.PlayerTurn)
+        enum TurnoCombat
         {
-            turnoActual = TurnoCombat.EnemyTurn;
+            PlayerTurn,
+            EnemyTurn,
+            GameOverTurn
         }
-        else if(turnoActual == TurnoCombat.EnemyTurn)
+
+        [SerializeField] TurnoCombat turnoActual;
+
+
+        void CambiarTurno()
         {
-            turnoActual = TurnoCombat.PlayerTurn;
+            if (turnoActual == TurnoCombat.PlayerTurn)
+            {
+                turnoActual = TurnoCombat.EnemyTurn;
+            }
+            else if (turnoActual == TurnoCombat.EnemyTurn)
+            {
+                turnoActual = TurnoCombat.PlayerTurn;
+            }
         }
-    }
 
-    void SetCombatTurn(Character atacante, Character defensor)
-    {
+        void SetCombatTurn(Character atacante, Character defensor)
+        {
 
-    }
+        }
 
-    void EmpezarCombate()
-    {
+        void EmpezarCombate()
+        {
 
-    }
+        }
 
-    public void PlayerAttackRegular()
-    {
+        public void PlayerAttackRegular()
+        {
 
-    }
-    public void PlayerAttackPoisoning()
-    {
+        }
+        public void PlayerAttackPoisoning()
+        {
 
-    }
-    public void PlayerAttackStunning()
-    {
+        }
+        public void PlayerAttackStunning()
+        {
 
-    }
-    public void PlayerAttackRest()
-    {
+        }
+        public void PlayerAttackRest()
+        {
+
+        }
 
     }
 
