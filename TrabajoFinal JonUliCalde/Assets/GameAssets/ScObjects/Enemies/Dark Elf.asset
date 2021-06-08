@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcfd4be7e4754df459c7a3363cd9e11a, type: 3}
-  m_Name: Player
+  m_Script: {fileID: 11500000, guid: c94510acbabad4448849872a790d8cff, type: 3}
+  m_Name: Dark Elf
   m_EditorClassIdentifier: 
-  _playerName: Player
-  _attack: 25
+  _enemyName: Dark Elf
+  _attack: 10
   _crit: 0.4
