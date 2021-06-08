@@ -18,7 +18,7 @@ namespace enemyStatusConditions
                 //GameObject.FindObjectOfType<EnemyWaves>().EnemyIsDead();
             }
         }
-        public virtual void ChoseEnemyAction(int amount, Character targetToGo)
+        public override void ChoseEnemyAction(int amount, Character targetToGo)
         {
             RegularAttack(amount, targetToGo);
         }

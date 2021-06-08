@@ -73,6 +73,9 @@ namespace enemyStatusConditions
         {
             targetToGo.TakeDamage(amount);
         }
+        public virtual void ChoseEnemyAction(int amount, Character targetToGo)
+        {
+        }
     }
 }
 
