@@ -7,6 +7,11 @@ namespace enemyStatusConditions
 {
     public class Player : Character, IStun , IPoison, IRest
     {
+
+        string[] plAttacks = { "RegularAttack", "StunAttack", "PoisonAttack", "GetRest" };
+
+        
+
         public Player(ScPlayer data) : base(data._playerName, data._attack, data._crit) { }
         public override void TakeDamage(int ammount)
         {
@@ -17,6 +22,7 @@ namespace enemyStatusConditions
                 //CombatController.instance.combatTurn = CombatController.CombatTurns.GAMEOVER;
             }
         }
+
         public void StunAttack(int turns, Character targetToGo)
         {
             targetToGo.maxStunedTurns = turns;
@@ -33,7 +39,35 @@ namespace enemyStatusConditions
 
         public override void ChoseEnemyAction(int amount, Character targetToGo, int kindAttack)
         {
-           
+            for (int i = 0; i < plAttacks.Length; i++)
+            {
+                if (i == kindAttack)
+                {
+                    
+                    //(plAttacks[i])(amount,targetToGo); Idea para hacerla automatizada full pero no podemos invocar metodos sin heredar de monobehaviour
+
+                                    
+                }
+                if (i == 0)
+                {
+                    RegularAttack(amount, targetToGo);
+                }
+                if (i == 1)
+                {
+                    int turnsPoison = Mathf.RoundToInt(amount / 6);
+                    StunAttack(turnsPoison, targetToGo);
+                }
+                if (i == 2)
+                {
+                    int turnsPoison = Mathf.RoundToInt(amount / 6);
+                    PoisonAttack(turnsPoison, targetToGo);
+                }
+                if (i == 3)
+                {                   
+                    GetRest(amount);
+                }
+
+            }
         }
 
     }
