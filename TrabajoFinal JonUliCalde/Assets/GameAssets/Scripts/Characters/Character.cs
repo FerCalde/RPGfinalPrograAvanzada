@@ -50,13 +50,12 @@ namespace enemyStatusConditions
             if (maxPoisonedTurns > poisonedTurns)
             {
                 TakeDamage(amount);
-                isStuned = true;
                 poisonedTurns++;
                 
             }
             else
             {
-                isStuned = false;
+                
                 poisonedTurns = 0;
                 maxPoisonedTurns = 0;
             }
@@ -67,9 +66,11 @@ namespace enemyStatusConditions
             if (maxStunedTurns > stunedTurns)
             {
                 stunedTurns++;
+                isStuned = true;
             }
             else
             {
+                isStuned = false;
                 stunedTurns = 0;
                 maxStunedTurns = 0;
             }
