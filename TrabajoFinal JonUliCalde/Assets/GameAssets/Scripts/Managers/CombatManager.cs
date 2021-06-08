@@ -145,32 +145,34 @@ namespace enemyStatusConditions
             {
                 atacante.ChoseEnemyAction(totalDamage, defensor, plAttack);
 
-                /*string textAttack;
 
-                if (totalDamage > dCPlayer.characterInstance.attack)
-                {
-                    textAttack = "Player critical hit " + totalDamage;
-                }
-                else if (totalDamage <= dCPlayer.characterInstance.attack && totalDamage>0)
-                {
-                    textAttack = "Player hits " + totalDamage;
-                }
-                else if (totalDamage == 0)
-                {
-                    textAttack = "Player miss the hit";
-                }
-
-                InfoManager.Instance.InfoChanger(textAttack);*/
             }
             else if (atacante != dCPlayer.characterInstance)
             {
                 atacante.ChoseEnemyAction(totalDamage, defensor);
             }
 
+           //TEXT CRITICAL 
+
+            if (totalDamage > dCPlayer.characterInstance.attack)
+            {
+                InfoManager.Instance.AttackText("CRITICAL!");
+            }
+            else if (totalDamage <= dCPlayer.characterInstance.attack && totalDamage > 0)
+            {
+                
+                InfoManager.Instance.AttackText("");
+            }
+            else if (totalDamage == 0)
+            {
+                
+                InfoManager.Instance.AttackText("MISS!");
+            }
+
+             
 
 
-
-            yield return new WaitForSeconds(2);
+         yield return new WaitForSeconds(2);
 
             OnNextTurn?.Invoke();
 
