@@ -70,7 +70,7 @@ namespace enemyStatusConditions
         //Critical
         void CriticalHit(int basicDamage, float critChance, ref int total)
         {
-            print("basicDamage value: " + basicDamage);
+            //print("basicDamage value: " + basicDamage);
 
 
             int crit = Random.Range(1, 101);
@@ -90,7 +90,7 @@ namespace enemyStatusConditions
         //miss
         void MissChance(int basicDamage, float critChance, ref int total)
         {
-            print("critChance value: " + critChance);
+            //print("critChance value: " + critChance);
 
             int missChance = Random.Range(0, 3);
 
@@ -118,7 +118,7 @@ namespace enemyStatusConditions
             else if (turnoActual == TurnoCombat.EnemyTurn)
             {
                 turnoActual = TurnoCombat.PlayerTurn;
-                
+                DisplayCombat.Instance.EnableButtonsAttack();
             }
         }
 
@@ -132,8 +132,8 @@ namespace enemyStatusConditions
         IEnumerator DoC(Character atacante, Character defensor)
         {
             //Comprobar estado del Atacante y updatea sus "constantes"
-            atacante.CheckIsStuned();
-            atacante.CheckIsPoisoned(2);
+            //atacante.CheckIsStuned();
+            //atacante.CheckIsPoisoned(2);
 
             CalculateAttackDamage(atacante);
             

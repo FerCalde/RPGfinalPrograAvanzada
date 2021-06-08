@@ -42,7 +42,7 @@ namespace enemyStatusConditions
             for (int i = 0; i < waves; i++)
             {
                 enemyWavesArr[i] = new GenericEnemiesQueue<Enemy>();
-                object[] enemiesData = Resources.LoadAll("Enemies", typeof(ScEnemy));
+                object[] enemiesData = Resources.LoadAll("ScObjects/Enemies", typeof(ScEnemy));
 
                 for (int j = 0; j < enemiesPerWave; j++)
                 {
