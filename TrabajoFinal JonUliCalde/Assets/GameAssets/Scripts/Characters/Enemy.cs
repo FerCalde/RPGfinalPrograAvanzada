@@ -15,7 +15,7 @@ namespace enemyStatusConditions
             base.TakeDamage(ammount);
             if (hp == 0)
             {
-                //GameObject.FindObjectOfType<EnemyWaves>().EnemyIsDead();
+                GameObject.FindObjectOfType<EnemyWave>().MakeNextEnemyAppear();
             }
         }
         public override void ChoseEnemyAction(int amount, Character targetToGo)

@@ -51,9 +51,13 @@ namespace enemyStatusConditions
                     enemyWavesArr[i].PonerALaFila(enemy);
                 }
             }
-            StartCoroutine(NextEnemy());
+            MakeNextEnemyAppear();
         }
 
+        public void MakeNextEnemyAppear()
+        {
+            StartCoroutine(NextEnemy());
+        }
 
         IEnumerator NextEnemy()
         {
