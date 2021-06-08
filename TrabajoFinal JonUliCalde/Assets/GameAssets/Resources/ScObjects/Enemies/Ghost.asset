@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ghost
   m_EditorClassIdentifier: 
   _enemyName: Ghost
-  _attack: 15
+  _attack: 12
   _crit: 0.3

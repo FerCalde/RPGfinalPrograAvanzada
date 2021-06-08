@@ -82,7 +82,7 @@ namespace enemyStatusConditions
         {
             targetToGo.TakeDamage(amount);
 
-            InfoManager.Instance.InfoChanger(name + " te mete un meco de " + amount);
+            InfoManager.Instance.InfoChanger(name + " mete un meco que quita " + amount + " de vida");
         }
         public virtual void ChoseEnemyAction(int amount, Character targetToGo)
         {
