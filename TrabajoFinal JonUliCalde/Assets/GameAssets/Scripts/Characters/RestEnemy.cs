@@ -11,6 +11,7 @@ namespace enemyStatusConditions
         public void GetRest(int amount)
         {
             hp += amount;
+            InfoManager.Instance.InfoChanger(name + " ha restaurado " + amount + " puntos de vida.");
         }
         public override void ChoseEnemyAction(int amount, Character targetToGo)
         {

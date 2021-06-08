@@ -11,6 +11,7 @@ namespace enemyStatusConditions
         public void PoisonAttack(int turns, Character targetToGo)
         {
             targetToGo.maxPoisonedTurns = turns;
+            InfoManager.Instance.InfoChanger(name + " ha envenenado durante " + turns + " turnos");
         }
         public override void ChoseEnemyAction(int amount, Character targetToGo)
         {
