@@ -7,7 +7,7 @@ using UnityEngine;
 namespace enemyStatusConditions
 {
 
-    
+
 
 
     public class CombatManager : MonoBehaviour
@@ -62,8 +62,9 @@ namespace enemyStatusConditions
         void BasicHit(int basicDamage, float critChance, ref int total)
         {
 
-            basicDamage = Random.Range((basicDamage - 5), (basicDamage + 6));
+            basicDamage = Mathf.RoundToInt(Random.Range((basicDamage - 5), (basicDamage + 6)));
             total += basicDamage;
+            InfoManager.Instance.AttackText("");
         }
 
 
@@ -72,11 +73,12 @@ namespace enemyStatusConditions
         {
             //print("basicDamage value: " + basicDamage);
 
-            int crit = Random.Range(1, 101);
+            float crit = Random.Range(0, 1);
 
-            if (critChance > crit)
+            if ((critChance) < crit)
             {
-                print("Crits");
+                InfoManager.Instance.AttackText("CRITICAL!");
+                //print("Crits");
                 total *= 2;
             }
 
@@ -90,11 +92,12 @@ namespace enemyStatusConditions
         {
             //print("critChance value: " + critChance);
 
-            int missChance = Random.Range(0, 3);
+            int missChance = Random.Range(0, 1);
 
-            if (missChance.Equals(0)) //if missess... 33% chance
+            if ((critChance*0.5f) < missChance ) //if missess... 33% chance
             {
-                print("Misses");
+                //print("Misses");
+                InfoManager.Instance.AttackText("MISS!");
                 hasMissed = true;
                 total = 0;
             }
@@ -120,7 +123,7 @@ namespace enemyStatusConditions
             }
         }
 
-        
+
 
         void SetCombatTurn(Character atacante, Character defensor)
         {
@@ -134,7 +137,7 @@ namespace enemyStatusConditions
             atacante.CheckIsPoisoned(2);
 
             CalculateAttackDamage(atacante);
-            
+
             if (atacante.isStuned)
             {
                 totalDamage = Mathf.RoundToInt(totalDamage * 0.5f);
@@ -144,11 +147,33 @@ namespace enemyStatusConditions
             if (atacante == dCPlayer.characterInstance)
             {
                 atacante.ChoseEnemyAction(totalDamage, defensor, plAttack);
+
+
             }
-            else if(atacante!=dCPlayer.characterInstance)
+            else if (atacante != dCPlayer.characterInstance)
             {
                 atacante.ChoseEnemyAction(totalDamage, defensor);
             }
+
+            //TEXT CRITICAL 
+
+            /* if (totalDamage > dCPlayer.characterInstance.attack)
+             {
+                 InfoManager.Instance.AttackText("CRITICAL!");
+             }
+             else if (totalDamage <= dCPlayer.characterInstance.attack && totalDamage > 0)
+             {
+
+                 InfoManager.Instance.AttackText("");
+             }
+             else if (totalDamage == 0)
+             {
+
+                 InfoManager.Instance.AttackText("MISS!");
+             }*/
+
+
+
 
             yield return new WaitForSeconds(2);
 
@@ -177,7 +202,7 @@ namespace enemyStatusConditions
             turnoActual = TurnoCombat.GameOverTurn;
         }
 
-        
+
 
     }
 

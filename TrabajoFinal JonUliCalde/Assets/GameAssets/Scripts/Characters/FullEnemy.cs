@@ -10,14 +10,17 @@ namespace enemyStatusConditions
         public void StunAttack(int turns, Character targetToGo)
         {
             targetToGo.maxStunedTurns = turns;
+            InfoManager.Instance.InfoChanger(name + " ha stuneado durante " + turns + " turnos.");
         }
         public void PoisonAttack(int turns, Character targetToGo)
         {
             targetToGo.maxPoisonedTurns = turns;
+            InfoManager.Instance.InfoChanger(name + " ha envenenado durante " + turns + " turnos");
         }
         public void GetRest(int amount)
         {
             hp += amount;
+            InfoManager.Instance.InfoChanger(name + " ha restaurado " + amount + " puntos de vida.");
         }
         public override void ChoseEnemyAction(int amount, Character targetToGo)
         {

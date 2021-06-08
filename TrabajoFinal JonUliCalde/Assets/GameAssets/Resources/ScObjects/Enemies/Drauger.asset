@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Drauger
   m_EditorClassIdentifier: 
   _enemyName: Drauger
-  _attack: 20
+  _attack: 11
   _crit: 0.1

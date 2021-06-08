@@ -81,6 +81,8 @@ namespace enemyStatusConditions
         public void RegularAttack(int amount, Character targetToGo)
         {
             targetToGo.TakeDamage(amount);
+
+            InfoManager.Instance.InfoChanger(name + " mete un meco que quita " + amount + " de vida");
         }
         public virtual void ChoseEnemyAction(int amount, Character targetToGo)
         {
@@ -89,6 +91,7 @@ namespace enemyStatusConditions
         {
 
         }
+
     }
 }
 

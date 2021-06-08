@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Orc
   m_EditorClassIdentifier: 
   _enemyName: Orc
-  _attack: 25
+  _attack: 14
   _crit: 0.1
