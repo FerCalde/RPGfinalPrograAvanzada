@@ -20,7 +20,7 @@ namespace enemyStatusConditions
             if (hp == 0)
             {
                 Debug.Log("Its Fking dead");
-                //CombatController.instance.combatTurn = CombatController.CombatTurns.GAMEOVER;
+                GameObject.FindObjectOfType<EnemyWave>().MakeNextEnemyAppear();
             }
         }
 
