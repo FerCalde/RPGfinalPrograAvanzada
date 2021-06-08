@@ -69,6 +69,7 @@ namespace enemyStatusConditions
             {
                 stunedTurns++;
                 isStuned = true;
+                Debug.Log("Is stuneeddd");
             }
             else
             {

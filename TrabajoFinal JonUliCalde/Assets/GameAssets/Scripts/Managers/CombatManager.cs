@@ -130,15 +130,15 @@ namespace enemyStatusConditions
         IEnumerator DoC(Character atacante, Character defensor)
         {
             //Comprobar estado del Atacante y updatea sus "constantes"
-            //atacante.CheckIsStuned();
-            //atacante.CheckIsPoisoned(2);
+            atacante.CheckIsStuned();
+            atacante.CheckIsPoisoned(2);
 
             CalculateAttackDamage(atacante);
             
-            /*if (atacante.isStuned)
+            if (atacante.isStuned)
             {
                 totalDamage = Mathf.RoundToInt(totalDamage * 0.5f);
-            }*/
+            }
             //(atacante == dCPlayer.characterInstance) ? atacante.ChoseEnemyAction(totalDamage, defensor, plAttack) : atacante.ChoseEnemyAction(totalDamage, defensor);
 
             if (atacante == dCPlayer.characterInstance)
