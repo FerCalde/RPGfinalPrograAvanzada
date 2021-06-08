@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using System.Linq;
+using UnityEngine.UI;
 
 namespace enemyStatusConditions
 {
@@ -42,14 +43,21 @@ namespace enemyStatusConditions
             for (int i = 0; i < waves; i++)
             {
                 enemyWavesArr[i] = new GenericEnemiesQueue<Enemy>();
-                object[] enemiesData = Resources.LoadAll("ScObjects/Enemies", typeof(ScEnemy));
-
-                for (int j = 0; j < enemiesPerWave; j++)
+                ScEnemy[] enemiesData = Resources.LoadAll<ScEnemy>("ScObjects/Enemies");
+                
+                var poisonEnemy = enemiesData.OfType<ScPoisonEnemy>();
+                
+                foreach (ScPoisonEnemy item in poisonEnemy) 
+                {
+                    Enemy enemy = new PoisonEnemy(item);
+                }
+                
+                /*for (int j = 0; j < enemiesPerWave; j++)
                 {
                     Enemy enemy = new Enemy(enemiesData[UnityEngine.Random.Range(0, enemiesData.Length)] as ScEnemy);
                     enemy.hp = enemy.maxHp;
                     enemyWavesArr[i].PonerALaFila(enemy);
-                }
+                }*/
             }
             MakeNextEnemyAppear();
         }
