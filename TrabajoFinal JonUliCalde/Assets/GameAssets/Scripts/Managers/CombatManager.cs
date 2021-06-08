@@ -24,7 +24,7 @@ namespace enemyStatusConditions
         public DisplayCharacter dCPlayer;
         public DisplayCharacter dCEnemy;
 
-
+        int plAttack = 0;
 
         int totalDamage = 0;
 
@@ -82,8 +82,6 @@ namespace enemyStatusConditions
             }
 
 
-
-
         }
 
 
@@ -135,6 +133,17 @@ namespace enemyStatusConditions
         {
             CalculateAttackDamage(atacante);
 
+            //(atacante == dCPlayer.characterInstance) ? atacante.ChoseEnemyAction(totalDamage, defensor, plAttack) : atacante.ChoseEnemyAction(totalDamage, defensor);
+
+            if (atacante == dCPlayer.characterInstance)
+            {
+                atacante.ChoseEnemyAction(totalDamage, defensor, plAttack);
+            }
+            else if(atacante!=dCPlayer.characterInstance)
+            {
+                atacante.ChoseEnemyAction(totalDamage, defensor);
+            }
+
             yield return new WaitForSeconds(2);
 
             OnNextTurn?.Invoke();
@@ -152,8 +161,14 @@ namespace enemyStatusConditions
         {
 
         }
+        public void PlayerSelectAttack(int indexAttack)
+        {
+            plAttack = indexAttack;
+            //dCPlayer.characterInstance.ChoseEnemyAction(dCPlayer.characterInstance.attack, dCEnemy.characterInstance, indexAttack);
+            SetCombatTurn(dCPlayer.characterInstance, dCEnemy.characterInstance);
 
-        public void PlayerAttackRegular()
+        }
+       /* public void PlayerAttackRegular()
         {
             SetCombatTurn(dCPlayer.characterInstance, dCEnemy.characterInstance);
         }
@@ -170,6 +185,10 @@ namespace enemyStatusConditions
         {
 
         }
+       */
+
+
+
 
         public void EndGame()
         {
