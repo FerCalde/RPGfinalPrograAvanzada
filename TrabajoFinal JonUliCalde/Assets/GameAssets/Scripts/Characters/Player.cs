@@ -8,7 +8,7 @@ namespace enemyStatusConditions
     public class Player : Character, IStun , IPoison, IRest
     {
 
-        string[] plAttacks = { "RegularAttack", "StunAttack", "PoisonAttack", "GetRest" };
+        //string[] plAttacks = { "RegularAttack", "StunAttack", "PoisonAttack", "GetRest" };
 
         
 
@@ -19,6 +19,7 @@ namespace enemyStatusConditions
 
             if (hp == 0)
             {
+                Debug.Log("Its Fking dead");
                 //CombatController.instance.combatTurn = CombatController.CombatTurns.GAMEOVER;
             }
         }
@@ -39,6 +40,27 @@ namespace enemyStatusConditions
 
         public override void ChoseEnemyAction(int amount, Character targetToGo, int kindAttack)
         {
+
+            if (kindAttack == 0)
+            {
+                RegularAttack(amount, targetToGo);
+            }
+            if (kindAttack == 1)
+            {
+                int turnsPoison = Mathf.RoundToInt(amount / 6);
+                StunAttack(turnsPoison, targetToGo);
+            }
+            if (kindAttack == 2)
+            {
+                int turnsPoison = Mathf.RoundToInt(amount / 6);
+                PoisonAttack(turnsPoison, targetToGo);
+            }
+            if (kindAttack == 3)
+            {
+                GetRest(amount);
+            }
+            Debug.Log(" Ataqueeeee " + kindAttack);
+            /*
             for (int i = 0; i < plAttacks.Length; i++)
             {
                 if (i == kindAttack)
@@ -67,7 +89,7 @@ namespace enemyStatusConditions
                     GetRest(amount);
                 }
 
-            }
+            }*/
         }
 
     }

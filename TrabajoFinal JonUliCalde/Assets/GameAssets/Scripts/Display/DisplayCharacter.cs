@@ -37,7 +37,7 @@ namespace enemyStatusConditions
 
         [SerializeField] Text nameTxt;
         [SerializeField] Text attackTxt;
-
+        [SerializeField] Text vidaHp;
 
         [SerializeField] Image hp;
         [SerializeField] float critico;
@@ -47,16 +47,19 @@ namespace enemyStatusConditions
             nameTxt.text = characterInstance.name.ToString();
             attackTxt.text = characterInstance.attack.ToString();
 
-
-            critico = characterInstance.critChance;
+            vidaHp.text = "Vida: " + characterInstance.hp;
+            //critico = characterInstance.critChance;
             ActualiceHp(characterInstance.hp);
         }
 
         public void ActualiceHp(int value)
         {
-            float width = (value * 100) / characterInstance.maxHp;
-            //hp.rectTransform.sizeDelta = new Vector2(width, hp.rectTransform.sizeDelta.y);
-            hp.fillAmount = width;
+            //print(value + " ES la vida");
+
+            float width = (float)(value*360)  / (float)characterInstance.maxHp;
+            hp.rectTransform.sizeDelta = new Vector2((float)width, hp.rectTransform.sizeDelta.y);
+            vidaHp.text = "Vida: " + characterInstance.hp;
+            //hp.fillAmount = width;
         }
     }
 }

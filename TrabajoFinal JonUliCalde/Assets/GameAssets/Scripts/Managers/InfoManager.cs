@@ -14,4 +14,8 @@ public class InfoManager : SingletonTemporal<InfoManager>
     {
         infoText.text = t;
     }
+
+
+
+
 }

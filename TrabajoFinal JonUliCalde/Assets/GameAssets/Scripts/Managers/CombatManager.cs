@@ -72,7 +72,6 @@ namespace enemyStatusConditions
         {
             //print("basicDamage value: " + basicDamage);
 
-
             int crit = Random.Range(1, 101);
 
             if (critChance > crit)
@@ -80,7 +79,6 @@ namespace enemyStatusConditions
                 print("Crits");
                 total *= 2;
             }
-
 
         }
 
@@ -137,10 +135,10 @@ namespace enemyStatusConditions
 
             CalculateAttackDamage(atacante);
             
-            if (atacante.isStuned)
+            /*if (atacante.isStuned)
             {
                 totalDamage = Mathf.RoundToInt(totalDamage * 0.5f);
-            }
+            }*/
             //(atacante == dCPlayer.characterInstance) ? atacante.ChoseEnemyAction(totalDamage, defensor, plAttack) : atacante.ChoseEnemyAction(totalDamage, defensor);
 
             if (atacante == dCPlayer.characterInstance)
@@ -165,10 +163,7 @@ namespace enemyStatusConditions
             lifeDelegate?.Invoke(attacker.attack, attacker.critChance, ref totalDamage);
         }
 
-        void EmpezarCombate()
-        {
 
-        }
         public void PlayerSelectAttack(int indexAttack)
         {
             plAttack = indexAttack;
@@ -176,9 +171,6 @@ namespace enemyStatusConditions
             SetCombatTurn(dCPlayer.characterInstance, dCEnemy.characterInstance);
 
         }
-
-
-
 
         public void EndGame()
         {
