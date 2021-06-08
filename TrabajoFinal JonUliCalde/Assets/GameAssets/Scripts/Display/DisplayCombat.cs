@@ -4,47 +4,52 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class DisplayCombat : SingletonTemporal<DisplayCombat>
+namespace enemyStatusConditions
 {
 
-    public GameObject panelSalas, panelCombat;
-    bool switchPanels = false;
 
-    [SerializeField] Button[] botonesAttackPlayer;
 
-    // Start is called before the first frame update
-    void Start()
+
+    public class DisplayCombat : SingletonTemporal<DisplayCombat>
     {
-        SwitchPanels();
-    }
-   
 
-    public void SwitchPanels()
-    {
-        switchPanels = !switchPanels;
+        public GameObject panelSalas, panelCombat;
+        bool switchPanels = false;
 
-        panelSalas.SetActive(switchPanels);
-        panelCombat.SetActive(!switchPanels);
-    }
+        [SerializeField] Button[] botonesAttackPlayer;
 
-    public void ButtonsAttack()
-    {
-        //FALTARIA EL DO PLAYER ATTACK cuando pegue el pive
-        //CombatController.instance.DoPlayerAttack();
-
-
-
-        for (int i = 0; i < botonesAttackPlayer.Length; i++)
+        // Start is called before the first frame update
+        void Start()
         {
-            botonesAttackPlayer[i].interactable = false;
+            SwitchPanels();
         }
-    }
 
-    public void EnableButtonsAttack()
-    {
-        for (int i = 0; i < botonesAttackPlayer.Length; i++)
+
+        public void SwitchPanels()
         {
-            botonesAttackPlayer[i].interactable = false;
+            switchPanels = !switchPanels;
+
+            panelSalas.SetActive(switchPanels);
+            panelCombat.SetActive(!switchPanels);
+        }
+
+        public void ButtonsAttack()
+        {
+            //FALTARIA EL DO PLAYER ATTACK cuando pegue el pive
+            //CombatController.instance.DoPlayerAttack();
+
+            for (int i = 0; i < botonesAttackPlayer.Length; i++)
+            {
+                botonesAttackPlayer[i].interactable = false;
+            }
+        }
+
+        public void EnableButtonsAttack()
+        {
+            for (int i = 0; i < botonesAttackPlayer.Length; i++)
+            {
+                botonesAttackPlayer[i].interactable = true;
+            }
         }
     }
 }
