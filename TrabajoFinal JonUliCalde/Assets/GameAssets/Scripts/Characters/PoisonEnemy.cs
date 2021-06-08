@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace enemyStatusConditions
 {
-    public class PoisonEnemy : Enemy, IPoison, IThisisanEnemy
+    public class PoisonEnemy : Enemy, IPoison
     {
         public PoisonEnemy(ScPoisonEnemy data) : base(data){}
 
