@@ -47,6 +47,7 @@ namespace enemyStatusConditions
                 for (int j = 0; j < enemiesPerWave; j++)
                 {
                     Enemy enemy = new Enemy(enemiesData[UnityEngine.Random.Range(0, enemiesData.Length)] as ScEnemy);
+                    enemy.hp = enemy.maxHp;
                     enemyWavesArr[i].PonerALaFila(enemy);
                 }
             }
@@ -65,12 +66,12 @@ namespace enemyStatusConditions
                 CombatManager.instance.dCEnemy.characterInstance = enemyWavesArr[actualWave - 1].QuitarDeLaFila();
                 CombatManager.instance.dCEnemy.ActualiceDisplayData();
 
-                if ((everyHowManyWavesToHealPlayer % actualWave).Equals(0)) //Si el resto es 0. Es decir, si por ejemplo 3/3...
+                /*if ((everyHowManyWavesToHealPlayer % actualWave).Equals(0)) //Si el resto es 0. Es decir, si por ejemplo 3/3...
                 {
                     //Actualizamos texto de información
                     //Recuperamos vida jugador.
                     //yield return new WaitForSeconds(3);
-                }
+                }*/
 
                 
             }

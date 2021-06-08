@@ -23,6 +23,8 @@ namespace enemyStatusConditions
 
         private int _hp;
 
+        
+
         public int hp
         {
             get { return _hp; }
