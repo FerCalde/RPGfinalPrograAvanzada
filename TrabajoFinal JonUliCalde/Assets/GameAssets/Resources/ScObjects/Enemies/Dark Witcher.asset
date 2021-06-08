@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Dark Witcher
   m_EditorClassIdentifier: 
   _enemyName: Dark Witcher
-  _attack: 25
+  _attack: 15
   _crit: 0.15
