@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace enemyStatusConditions
 {
-    public class RestEnemy : Enemy, IRest
+    public class RestEnemy : Enemy, IRest, IThisisanEnemy
     {
         public RestEnemy(ScRestEnemy data) : base(data) { }
 

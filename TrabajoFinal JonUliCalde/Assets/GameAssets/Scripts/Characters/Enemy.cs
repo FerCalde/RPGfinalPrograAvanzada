@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace enemyStatusConditions
 {
-    public class Enemy : Character
+    public class Enemy : Character, IThisisanEnemy
     {
         public Enemy(ScEnemy data) : base(data._enemyName, data._attack, data._crit)
         {

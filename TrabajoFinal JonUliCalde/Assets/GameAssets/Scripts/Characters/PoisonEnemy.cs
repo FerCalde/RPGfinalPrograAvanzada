@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace enemyStatusConditions
 {
-    public class PoisonEnemy : Enemy, IPoison
+    public class PoisonEnemy : Enemy, IPoison, IThisisanEnemy
     {
         public PoisonEnemy(ScPoisonEnemy data) : base(data){}
 
@@ -22,7 +22,7 @@ namespace enemyStatusConditions
             }
             else
             {
-                int turnsPoison = Mathf.RoundToInt(amount / 6);
+                int turnsPoison = Mathf.RoundToInt(amount / 5);
                 PoisonAttack(turnsPoison, targetToGo);
             }
         }

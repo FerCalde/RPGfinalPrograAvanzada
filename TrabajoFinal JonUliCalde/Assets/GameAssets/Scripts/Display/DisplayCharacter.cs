@@ -42,6 +42,9 @@ namespace enemyStatusConditions
         [SerializeField] Image hp;
         [SerializeField] float critico;
 
+        [SerializeField] GameObject venom;
+        [SerializeField] GameObject stun;
+
         public void ActualiceDisplayData()
         {
             nameTxt.text = "Nombre: " + characterInstance.name.ToString();
@@ -50,6 +53,8 @@ namespace enemyStatusConditions
             vidaHp.text = "Vida: " + characterInstance.hp;
             //critico = characterInstance.critChance;
             ActualiceHp(characterInstance.hp);
+            _character.imgPoison = venom;
+            _character.imgStun = stun;
         }
 
         public void ActualiceHp(int value)

@@ -55,7 +55,7 @@ namespace enemyStatusConditions
             }
             if (kindAttack == 2)
             {
-                int turnsPoison = Mathf.RoundToInt(amount / 6);
+                int turnsPoison = Mathf.RoundToInt(amount / 5);
                 PoisonAttack(turnsPoison, targetToGo);
             }
             if (kindAttack == 3)

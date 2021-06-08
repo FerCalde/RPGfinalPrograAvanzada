@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace enemyStatusConditions
 {
-    public class FullEnemy : Enemy, IStun, IPoison, IRest
+    public class FullEnemy : Enemy, IStun, IPoison, IRest, IThisisanEnemy
     {
         public FullEnemy(ScAllAttacksEnemy data) : base(data) { }
         public void StunAttack(int turns, Character targetToGo)
@@ -41,7 +41,7 @@ namespace enemyStatusConditions
                     }
                     else
                     {
-                        int turnsPoison = Mathf.RoundToInt(amount / 6);
+                        int turnsPoison = Mathf.RoundToInt(amount / 5);
                         StunAttack(turnsPoison, targetToGo);
                     }
                 }
