@@ -29,6 +29,13 @@ namespace enemyStatusConditions
         {
             hp += amount; 
         }
+
+
+        public override void ChoseEnemyAction(int amount, Character targetToGo, int kindAttack)
+        {
+           
+        }
+
     }
 }
 

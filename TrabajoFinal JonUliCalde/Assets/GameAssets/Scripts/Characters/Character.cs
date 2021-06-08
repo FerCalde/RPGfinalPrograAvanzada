@@ -76,6 +76,10 @@ namespace enemyStatusConditions
         public virtual void ChoseEnemyAction(int amount, Character targetToGo)
         {
         }
+        public virtual void ChoseEnemyAction(int amount, Character targetToGo, int kindAttack)
+        {
+
+        }
     }
 }
 
