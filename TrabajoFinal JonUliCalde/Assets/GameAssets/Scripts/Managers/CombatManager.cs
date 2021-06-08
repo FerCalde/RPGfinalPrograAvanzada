@@ -115,12 +115,16 @@ namespace enemyStatusConditions
             if (turnoActual == TurnoCombat.PlayerTurn)
             {
                 turnoActual = TurnoCombat.EnemyTurn;
+                SetCombatTurn(dCEnemy.characterInstance, dCPlayer.characterInstance); //Setteamos el turno del enemigo
             }
             else if (turnoActual == TurnoCombat.EnemyTurn)
             {
                 turnoActual = TurnoCombat.PlayerTurn;
+                
             }
         }
+
+        
 
         void SetCombatTurn(Character atacante, Character defensor)
         {
@@ -151,10 +155,11 @@ namespace enemyStatusConditions
 
         public void PlayerAttackRegular()
         {
-
+            SetCombatTurn(dCPlayer.characterInstance, dCEnemy.characterInstance);
         }
         public void PlayerAttackPoisoning()
         {
+            SetCombatTurn(dCPlayer.characterInstance, dCEnemy.characterInstance);
 
         }
         public void PlayerAttackStunning()
