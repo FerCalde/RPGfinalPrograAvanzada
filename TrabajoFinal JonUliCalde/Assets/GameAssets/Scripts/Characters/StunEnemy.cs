@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace enemyStatusConditions
 {
-    public class StunEnemy : Enemy, IStun, IThisisanEnemy
+    public class StunEnemy : Enemy, IStun
     {
         public StunEnemy(ScStunEnemy data) : base(data) { }
 

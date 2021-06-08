@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace enemyStatusConditions
 {
-    public class FullEnemy : Enemy, IStun, IPoison, IRest, IThisisanEnemy
+    public class FullEnemy : Enemy, IStun, IPoison, IRest
     {
         public FullEnemy(ScAllAttacksEnemy data) : base(data) { }
         public void StunAttack(int turns, Character targetToGo)
