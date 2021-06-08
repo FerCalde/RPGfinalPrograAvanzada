@@ -48,6 +48,8 @@ namespace enemyStatusConditions
                 var poisonEnemy = enemiesData.OfType<ScPoisonEnemy>();
                 var stunEnemy = enemiesData.OfType<ScStunEnemy>();
                 var restEnemy = enemiesData.OfType<ScRestEnemy>();
+                var fullEnemy = enemiesData.OfType<ScAllAttacksEnemy>();
+                var basicEnemy = enemiesData.OfType<ScEnemy>();
                 
                 foreach (ScPoisonEnemy e in poisonEnemy) 
                 {
@@ -62,6 +64,16 @@ namespace enemyStatusConditions
                 foreach (ScRestEnemy e in restEnemy)
                 {
                     Enemy enemy = new RestEnemy(e);
+                    enemy.hp = enemy.maxHp;
+                }
+                foreach (ScAllAttacksEnemy e in fullEnemy)
+                {
+                    Enemy enemy = new FullEnemy(e);
+                    enemy.hp = enemy.maxHp;
+                }
+                foreach (ScEnemy e in basicEnemy)
+                {
+                    Enemy enemy = new Enemy(e);
                     enemy.hp = enemy.maxHp;
                 }
 
