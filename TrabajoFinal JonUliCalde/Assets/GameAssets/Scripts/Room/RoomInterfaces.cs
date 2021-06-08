@@ -4,33 +4,34 @@ using UnityEngine;
 
 namespace Rooms
 {
-    public interface ICanEnter
-    {
-        bool CanEnter();
 
+    public interface IEnemiesRoom
+    {
+        void EnterEnemyRoom();
     }
 
-    public interface IRandomizeHealOrDamageRoom
+    public interface IChangePlayerHealth
     {
-        void RandomizeHealOrDamageRoom();
+        void UpdatePlayerHealth();
+    }
+    
+    public interface IPlayerCanDealMoreDamage
+    {
+        void PlayerDealMoreDamage();
     }
 
-    public interface IGenerateRandomItems
+    public interface IPlayerMaxHealthIncreases
     {
-        void GenerateRandomItems(int amountOfItems); //Generates 2 random items after receiving the key.
+        void IncreasePlayerMaxHealth();
     }
 
-    public interface IRecoverHealth
-    {
-        void RecoverHealth();
-    }
 
-    public interface IHasTakenKey
-    {
-        bool HasTakenKey(); //Checks if current room's key has already been taken.
-    }
+
+    
+
+
 }
-   
+
 
 
 
