@@ -46,16 +46,29 @@ namespace enemyStatusConditions
                 ScEnemy[] enemiesData = Resources.LoadAll<ScEnemy>("ScObjects/Enemies");
                 
                 var poisonEnemy = enemiesData.OfType<ScPoisonEnemy>();
+                var stunEnemy = enemiesData.OfType<ScStunEnemy>();
+                var restEnemy = enemiesData.OfType<ScRestEnemy>();
                 
-                foreach (ScPoisonEnemy item in poisonEnemy) 
+                foreach (ScPoisonEnemy e in poisonEnemy) 
                 {
-                    Enemy enemy = new PoisonEnemy(item);
+                    Enemy enemy = new PoisonEnemy(e);
+                    enemy.hp = enemy.maxHp;
                 }
-                
+                foreach(ScStunEnemy e in stunEnemy)
+                {
+                    Enemy enemy = new StunEnemy(e);
+                    enemy.hp = enemy.maxHp;
+                }
+                foreach (ScRestEnemy e in restEnemy)
+                {
+                    Enemy enemy = new RestEnemy(e);
+                    enemy.hp = enemy.maxHp;
+                }
+
                 /*for (int j = 0; j < enemiesPerWave; j++)
                 {
                     Enemy enemy = new Enemy(enemiesData[UnityEngine.Random.Range(0, enemiesData.Length)] as ScEnemy);
-                    enemy.hp = enemy.maxHp;
+                    
                     enemyWavesArr[i].PonerALaFila(enemy);
                 }*/
             }
