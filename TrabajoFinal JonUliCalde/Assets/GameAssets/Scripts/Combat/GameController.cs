@@ -51,6 +51,8 @@ namespace enemyStatusConditions
 
             OnCombatStart?.Invoke(this, new StartGameArgs(waves, enemies, everyHowManyWavesToHeal));
             CombatManager.instance.dCPlayer.ActualiceDisplayData();
+            InfoManager.Instance.InfoChanger("");
+            InfoManager.Instance.AttackText("");
         }
 
 

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InfoManager : SingletonTemporal<InfoManager>
 {
     Text infoText;
+    [SerializeField] Text criticText; 
     private void Start()
     {
         infoText = GetComponent<Text>();
@@ -15,6 +16,10 @@ public class InfoManager : SingletonTemporal<InfoManager>
         infoText.text = t;
     }
 
+    public void AttackText(string attackTipo)
+    {
+        criticText.text = attackTipo;
+    }
 
 
 

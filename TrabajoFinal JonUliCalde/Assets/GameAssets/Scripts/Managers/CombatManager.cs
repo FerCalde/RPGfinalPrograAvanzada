@@ -7,7 +7,7 @@ using UnityEngine;
 namespace enemyStatusConditions
 {
 
-    
+
 
 
     public class CombatManager : MonoBehaviour
@@ -120,7 +120,7 @@ namespace enemyStatusConditions
             }
         }
 
-        
+
 
         void SetCombatTurn(Character atacante, Character defensor)
         {
@@ -134,7 +134,7 @@ namespace enemyStatusConditions
             atacante.CheckIsPoisoned(2);
 
             CalculateAttackDamage(atacante);
-            
+
             if (atacante.isStuned)
             {
                 totalDamage = Mathf.RoundToInt(totalDamage * 0.5f);
@@ -144,11 +144,31 @@ namespace enemyStatusConditions
             if (atacante == dCPlayer.characterInstance)
             {
                 atacante.ChoseEnemyAction(totalDamage, defensor, plAttack);
+
+                /*string textAttack;
+
+                if (totalDamage > dCPlayer.characterInstance.attack)
+                {
+                    textAttack = "Player critical hit " + totalDamage;
+                }
+                else if (totalDamage <= dCPlayer.characterInstance.attack && totalDamage>0)
+                {
+                    textAttack = "Player hits " + totalDamage;
+                }
+                else if (totalDamage == 0)
+                {
+                    textAttack = "Player miss the hit";
+                }
+
+                InfoManager.Instance.InfoChanger(textAttack);*/
             }
-            else if(atacante!=dCPlayer.characterInstance)
+            else if (atacante != dCPlayer.characterInstance)
             {
                 atacante.ChoseEnemyAction(totalDamage, defensor);
             }
+
+
+
 
             yield return new WaitForSeconds(2);
 
@@ -177,7 +197,7 @@ namespace enemyStatusConditions
             turnoActual = TurnoCombat.GameOverTurn;
         }
 
-        
+
 
     }
 
