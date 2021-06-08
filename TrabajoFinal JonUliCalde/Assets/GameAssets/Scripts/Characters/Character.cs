@@ -21,6 +21,9 @@ namespace enemyStatusConditions
 
         public bool isStuned = false;
 
+        public GameObject imgPoison;
+        public GameObject imgStun;
+
         private int _hp;
 
         
@@ -53,13 +56,13 @@ namespace enemyStatusConditions
             {
                 TakeDamage(amount);
                 poisonedTurns++;
-                
+                UpdateImages(imgPoison, true);
             }
             else
             {
-                
                 poisonedTurns = 0;
                 maxPoisonedTurns = 0;
+                UpdateImages(imgPoison, false);
             }
 
         }
@@ -70,12 +73,14 @@ namespace enemyStatusConditions
                 stunedTurns++;
                 isStuned = true;
                 Debug.Log("Is stuneeddd");
+                UpdateImages(imgStun, true);
             }
             else
             {
                 isStuned = false;
                 stunedTurns = 0;
                 maxStunedTurns = 0;
+                UpdateImages(imgStun, false);
             }
         }
         public void RegularAttack(int amount, Character targetToGo)
@@ -90,6 +95,10 @@ namespace enemyStatusConditions
         public virtual void ChoseEnemyAction(int amount, Character targetToGo, int kindAttack)
         {
 
+        }
+        public void UpdateImages(GameObject img, bool active)
+        {
+            img.SetActive(active);
         }
 
     }

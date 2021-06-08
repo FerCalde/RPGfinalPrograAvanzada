@@ -26,6 +26,10 @@ namespace enemyStatusConditions
     {
         void GetRest(int amount);
     }
+    public interface IThisisanEnemy
+    {
+
+    }
 
 }
 
