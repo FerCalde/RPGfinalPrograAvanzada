@@ -37,7 +37,7 @@ namespace enemyStatusConditions
         {
 
 
-
+            RandomizeWaves();
             /*int waves = int.Parse(wavesIField.text);
             int enemies = int.Parse(enemiesIField.text);*/
             //startPanel.SetActive(false);
@@ -55,6 +55,13 @@ namespace enemyStatusConditions
             InfoManager.Instance.AttackText("");
         }
 
+
+        public void RandomizeWaves()
+        {
+            waves = UnityEngine.Random.Range(1, 5);
+            enemies = UnityEngine.Random.Range(1, 5);
+            everyHowManyWavesToHeal = UnityEngine.Random.Range(1, 5);
+        }
 
 
     }

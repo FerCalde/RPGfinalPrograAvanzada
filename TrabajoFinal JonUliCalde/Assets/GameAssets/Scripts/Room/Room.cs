@@ -6,6 +6,6 @@ public abstract class Room
 {
     string roomName;
 
-
+    
 
 }
