@@ -19,6 +19,8 @@ namespace enemyStatusConditions
         public int stunedTurns = 0;
         public int maxStunedTurns = 0;
 
+        public bool isStuned = false;
+
         private int _hp;
 
         public int hp
@@ -48,10 +50,13 @@ namespace enemyStatusConditions
             if (maxPoisonedTurns > poisonedTurns)
             {
                 TakeDamage(amount);
+                isStuned = true;
                 poisonedTurns++;
+                
             }
             else
             {
+                isStuned = false;
                 poisonedTurns = 0;
                 maxPoisonedTurns = 0;
             }
