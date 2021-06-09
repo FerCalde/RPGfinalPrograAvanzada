@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: HealandMaxHpRoom
   m_EditorClassIdentifier: 
   _roomName: HealandMaxHpRoom
-  waves: 0
-  enemies: 0
+  _enemies: 0
+  hpRecoveri: 15
+  incrementoMaxHp: 5

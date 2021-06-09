@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TrapRoom
   m_EditorClassIdentifier: 
   _roomName: TrapRoom
-  waves: 0
-  enemies: 0
+  _enemies: 0
+  damageTrampa: -15
