@@ -5,4 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TrapRoom", menuName = "Rooms/new TrapRoom", order = 1)]
 public class ScRoomTrap : ScRoom
 {
+    public int damageTrampa;
 }
