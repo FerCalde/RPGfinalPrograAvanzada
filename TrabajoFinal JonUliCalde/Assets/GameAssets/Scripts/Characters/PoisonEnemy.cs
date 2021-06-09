@@ -15,7 +15,7 @@ namespace enemyStatusConditions
         }
         public override void ChoseEnemyAction(int amount, Character targetToGo)
         {
-            float random = Random.Range(0, 1);
+            float random = Random.Range(0, 1.1f);
             if(random > 0.3f)
             {
                 RegularAttack(amount, targetToGo);
