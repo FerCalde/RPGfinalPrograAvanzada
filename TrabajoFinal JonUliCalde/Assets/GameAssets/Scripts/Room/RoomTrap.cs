@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using enemyStatusConditions;
 
 namespace Rooms
 {
@@ -26,15 +27,17 @@ namespace Rooms
 
         public virtual void UpdatePlayerHealth()
         {
-            //display
-
-            //_healthModification = CombatController.instance.heroDisplay.characterInstance.hp -= _healthModification;
-            Debug.Log("Player receives damage: " + _healthModification);
+            _healthModification = -10;
+            PlayerController.Instance.GetBonusHp(_healthModification);
         }
 
-  
 
 
+        public override void ActivarRoom()
+        {
+            UpdatePlayerHealth();
+
+        }
 
     }
 }

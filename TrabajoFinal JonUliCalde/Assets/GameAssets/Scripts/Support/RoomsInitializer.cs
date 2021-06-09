@@ -34,10 +34,9 @@ namespace Rooms
                 for (int i = 0; i < amountOfRooms; i++)
                 {
                     //roomsArr[i] = new GenericEnemiesQueue<Room>();
-                    int zero = 0;
                     int randomRoom = UnityEngine.Random.Range(0, 7);
 
-                    if (zero.Equals(0))
+                    if (randomRoom.Equals(0))
                     {
                         roomsArr[i] = roomsArr[i] = new GenericEnemiesQueue<Room>();
                         ScRoomEnemies[] roomsData = Resources.LoadAll<ScRoomEnemies>("ScObjects/Rooms");
@@ -120,18 +119,18 @@ namespace Rooms
                 {
                     RoomManager.Instance.room = roomsArr[actualRoom - 1].QuitarDeLaFila();
                     RoomManager.Instance.room.ActivarRoom();
-                    if (RoomManager.Instance.room.hasEnemies)
+                    /*if (RoomManager.Instance.room.hasEnemies)
                     {
                         //RoomManager.Instance.room.
                         GameController.instance.EmpezarCombateRoom();
                         //CombatManager.Instance
                         Debug.Log("Enemies room");
                         //RoomManager.Instance.room.UpdateDisplayData();
-                    }
-                    else
+                    }*/
+                    /*else
                     {
                         Debug.Log("No enemies");
-                    }
+                    }*/
 
 
 

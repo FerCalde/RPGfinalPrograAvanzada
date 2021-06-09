@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using enemyStatusConditions;
 
 namespace Rooms
 {
@@ -29,13 +30,20 @@ namespace Rooms
         public override void UpdatePlayerHealth()
         {
 
-            //_healthModification = CombatController.instance.heroDisplay.characterInstance.hp -= _healthModification;
-            Debug.Log("Player receives damage: " + _healthModification);
+            _healthModification = -10;
+            PlayerController.Instance.GetBonusHp(_healthModification);
         }
 
         public void IncreasePlayerMaxHealth()
         {
-            
+            PlayerController.Instance.GetBonusMaxHp(10);
+        }
+
+        public override void ActivarRoom()
+        {
+            UpdatePlayerHealth();
+            IncreasePlayerMaxHealth();
+
         }
 
 
