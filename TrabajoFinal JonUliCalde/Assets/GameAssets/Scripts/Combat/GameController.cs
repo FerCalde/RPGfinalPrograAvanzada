@@ -28,8 +28,16 @@ namespace enemyStatusConditions
         //public event EventHandler OnStartGame;
         public event EventHandler<StartGameArgs> OnCombatStart;
 
+        public void StartRoom()
+        {
+            //RandomizeSalas();
+            //Evento onSalasStart igual que el combat start
+            //if(Room is hasEnemies-> EmpezarCombate() para que se meta en combate con waves y enemigos 
+            //sino pasar siguiente sala
+        }
 
-        public void StartGame()
+
+        public void EmpezarCombateRoom()
         {
 
 
