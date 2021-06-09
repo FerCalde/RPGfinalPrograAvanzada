@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570a30c2b3ee12a4fa4076602f972b88, type: 3}
   m_Name: EnemiesRoom
   m_EditorClassIdentifier: 
-  _roomName: 
+  _roomName: EnemiesRoom
+  waves: 2
+  enemies: 3
