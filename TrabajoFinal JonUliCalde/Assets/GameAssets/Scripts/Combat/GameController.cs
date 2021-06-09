@@ -32,6 +32,8 @@ namespace enemyStatusConditions
         {
             //RandomizeSalas();
             //Evento onSalasStart igual que el combat start
+
+            //Estos ifs pueden ir en el Room initializer mejor pa qque opase de sala y tal
             //if(Room is hasEnemies-> EmpezarCombate() para que se meta en combate con waves y enemigos 
             //sino pasar siguiente sala
         }
