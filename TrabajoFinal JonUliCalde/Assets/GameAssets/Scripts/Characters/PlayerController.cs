@@ -48,16 +48,15 @@ namespace enemyStatusConditions
 
         public void GetBonusHp(int value)
         {
-            //bonusVida++;
             heroInstance.hp += value;
         }
-        public void GetBonusMaxHp()
+        public void GetBonusMaxHp(int value)
         {
-            bonusMaxVida++;
+            bonusMaxVida += value;
         }
-        public void GetBonusAttack()
+        public void GetBonusAttack(int value)
         {
-            bonusAttack++;
+            bonusAttack += value;
         }
         
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using enemyStatusConditions;
 
 namespace Rooms
 {
@@ -23,15 +24,24 @@ namespace Rooms
 
        
 
+       
         public override void UpdatePlayerHealth()
         {
-            
-            Debug.Log("Player recovers: " + _healthModification);
+            _healthModification = 10;
+            PlayerController.Instance.GetBonusHp(_healthModification);
         }
 
         public void EnterEnemyRoom()
         {
-            //Go to enemies room.
+            GameController.instance.EmpezarCombateRoom();
+        }
+
+
+        public override void ActivarRoom()
+        {
+            UpdatePlayerHealth();
+            EnterEnemyRoom();
+
         }
 
 
