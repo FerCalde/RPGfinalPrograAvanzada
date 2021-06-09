@@ -33,6 +33,10 @@ namespace enemyStatusConditions
             enemiesPerWave = e.enemiesPerWaves;
             this.everyHowManyWavesToHealPlayer = e.everyHowManyWavesToHeal;
             //combatPanel.SetActive(true);
+
+            DisplayCombat.Instance.SwitchPanels();
+            CombatManager.instance.SetearTurnoRoom();
+
             Init();
         }
 
@@ -121,10 +125,10 @@ namespace enemyStatusConditions
                     }
 
 
+                    MakeNextEnemyAppear();
                     
                 }
             }
-            MakeNextEnemyAppear();
         }
 
         public void MakeNextEnemyAppear()
@@ -154,15 +158,15 @@ namespace enemyStatusConditions
             }
             else
             {
-                actualWave++;
-                if (enemyWavesArr.Length >= actualWave)
+                if (enemyWavesArr.Length-1 >= actualWave)
                 {
                     CombatManager.instance.dCEnemy.characterInstance = enemyWavesArr[actualWave - 1].QuitarDeLaFila();
                     CombatManager.instance.dCEnemy.ActualiceDisplayData();
+                    actualWave++;
                 }
                 else
                 {
-                    CombatManager.instance.EndGame();
+                    CombatManager.instance.EndCombat();
                     
                 }
             }

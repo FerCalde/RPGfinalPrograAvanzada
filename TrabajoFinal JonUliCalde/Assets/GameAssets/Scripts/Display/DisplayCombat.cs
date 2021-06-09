@@ -21,11 +21,12 @@ namespace enemyStatusConditions
         // Start is called before the first frame update
         void Start()
         {
+
             SwitchPanels();
         }
 
 
-        public void SwitchPanels()
+        public void SwitchPanels( )
         {
             switchPanels = !switchPanels;
 
