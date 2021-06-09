@@ -4,6 +4,5 @@ using UnityEngine;
 public class ScRoom : ScriptableObject
 {
     public string _roomName;
-    public int waves;
-    public int enemies;
+    public bool _enemies;
 }

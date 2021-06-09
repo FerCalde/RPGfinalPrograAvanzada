@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "HealandMaxHpRoom", menuName = "Rooms/new HealandMaxHpRoom", order = 4)]
-public class ScRoomHealMaxHp : ScRoom
+public class ScRoomHealMaxHp : ScRoomHeal
 {
+    public int incrementoMaxHp;
 }

@@ -4,6 +4,6 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "HealAndEnemiesRoom", menuName = "Rooms/new HealAndEnemiesRoom", order = 3)]
-public class ScRoomHealEnemies : ScRoom
+public class ScRoomHealEnemies : ScRoomHeal
 {
 }
