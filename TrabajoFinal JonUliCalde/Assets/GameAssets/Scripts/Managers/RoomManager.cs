@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RoomManager : SingletonTemporal<RoomManager>
+
+namespace Rooms
 {
-    [SerializeField] Text roomName;
+    public class RoomManager : SingletonTemporal<RoomManager>
+    {
+        [SerializeField] Text roomName;
 
 
-    public Room room;
+        public Room room;
 
 
-    
+
+    }
+
 }

@@ -6,17 +6,16 @@ using UnityEngine;
 namespace enemyStatusConditions
 {
 
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : SingletonTemporal<PlayerController>
     {
         Character heroInstance;
 
-        int vida = 100;
+        public int vida = 100;
         int vidaMax = 100;
         int attack;
 
-        int bonusVida = 0;
-        int bonusMaxVida = 0;
-        int bonusAttack = 0;
+        public int bonusMaxVida = 0;
+        public int bonusAttack = 0;
 
         // Start is called before the first frame update
         void Start()
@@ -43,9 +42,10 @@ namespace enemyStatusConditions
             CombatManager.instance.dCPlayer.ActualiceDisplayData();
         }
 
-        public void GetBonusHp()
+        public void GetBonusHp(int value)
         {
-            bonusVida++;
+            //bonusVida++;
+            heroInstance.hp += value;
         }
         public void GetBonusMaxHp()
         {
@@ -58,7 +58,6 @@ namespace enemyStatusConditions
         public void CheckBonus()
         {
             heroInstance.maxHp = heroInstance.maxHp + (bonusMaxVida*10);
-            heroInstance.hp = heroInstance.hp + (bonusVida * 10);
             heroInstance.attack = attack + (bonusAttack * 10);
         }
     }

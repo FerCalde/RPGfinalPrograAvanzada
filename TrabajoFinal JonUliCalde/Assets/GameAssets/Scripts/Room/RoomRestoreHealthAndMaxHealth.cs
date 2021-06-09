@@ -4,11 +4,18 @@ using UnityEngine;
 
 namespace Rooms
 {
-    public abstract class RoomRestoreHealthAndMaxHealth : Room, IChangePlayerHealth, IPlayerMaxHealthIncreases
+    public class RoomRestoreHealthAndMaxHealth : RoomRestoreHealth, IChangePlayerHealth, IPlayerMaxHealthIncreases
     {
         int _healthModification; //It can be adding or substracting health.
 
-        public int healthModification
+        int maxHpIncrement;
+        public RoomRestoreHealthAndMaxHealth(ScRoomHealMaxHp data): base(data)
+        {
+            maxHpIncrement = data.incrementoMaxHp;
+        }
+
+
+        public override int healthModification
         {
             get { return _healthModification; }
             set
@@ -19,7 +26,7 @@ namespace Rooms
 
        
 
-        public void UpdatePlayerHealth()
+        public override void UpdatePlayerHealth()
         {
             _healthModification = 10;
             Debug.Log("Player recovers: " + _healthModification);

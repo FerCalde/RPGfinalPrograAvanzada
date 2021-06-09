@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Rooms
 {
-    public abstract class RoomTrap : Room, IChangePlayerHealth, IPlayerCanDealMoreDamage
+    public class RoomTrap : Room, IChangePlayerHealth
     {
         int _healthModification; //It can be adding or substracting health.
 
-        public int healthModification
+        public virtual int healthModification
         {
             get { return _healthModification; }
             set
@@ -17,22 +17,22 @@ namespace Rooms
             }
         }
 
-        
-
-        
-
-        public void UpdatePlayerHealth()
+        public RoomTrap(ScRoomTrap data): base(data._roomName, data._enemies)
         {
-            _healthModification = -10;
+            _healthModification = data.damageTrampa;
+        }
+
+        
+
+        public virtual void UpdatePlayerHealth()
+        {
+            //display
+
             //_healthModification = CombatController.instance.heroDisplay.characterInstance.hp -= _healthModification;
             Debug.Log("Player receives damage: " + _healthModification);
         }
 
-        public void PlayerDealMoreDamage()
-        {
-            //
-            Debug.Log("Player's attack has increased: " + _healthModification);
-        }
+  
 
 
 

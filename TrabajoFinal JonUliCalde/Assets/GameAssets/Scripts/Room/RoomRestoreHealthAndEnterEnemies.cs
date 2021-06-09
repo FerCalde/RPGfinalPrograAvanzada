@@ -4,11 +4,15 @@ using UnityEngine;
 
 namespace Rooms
 {
-    public abstract class RoomRestoreHealthAndEnterEnemies : Room, IChangePlayerHealth, IEnemiesRoom
+    public class RoomRestoreHealthAndEnterEnemies : RoomRestoreHealth, IChangePlayerHealth, IEnemiesRoom
     {
         int _healthModification; //It can be adding or substracting health.
 
-        public int healthModification
+
+        public RoomRestoreHealthAndEnterEnemies(ScRoomHealEnemies data) : base(data) { }
+       
+
+        public override int healthModification
         {
             get { return _healthModification; }
             set
@@ -19,7 +23,7 @@ namespace Rooms
 
        
 
-        public void UpdatePlayerHealth()
+        public override void UpdatePlayerHealth()
         {
             
             Debug.Log("Player recovers: " + _healthModification);

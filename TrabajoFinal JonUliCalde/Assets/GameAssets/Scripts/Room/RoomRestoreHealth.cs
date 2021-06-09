@@ -4,11 +4,18 @@ using UnityEngine;
 
 namespace Rooms
 {
-    public abstract class RoomRestoreHealth: Room, IChangePlayerHealth
+    public class RoomRestoreHealth: Room, IChangePlayerHealth
     {
+        
         int _healthModification; //It can be adding or substracting health.
 
-        public int healthModification
+        public RoomRestoreHealth(ScRoomHeal data): base(data._roomName, data._enemies)
+        {
+            _healthModification = data.hpRecoveri;
+        }
+
+
+        public virtual int healthModification
         {
             get { return _healthModification; }
             set
@@ -19,7 +26,7 @@ namespace Rooms
 
       
 
-        public void UpdatePlayerHealth()
+        public virtual void UpdatePlayerHealth()
         {
             _healthModification = 10;
 
