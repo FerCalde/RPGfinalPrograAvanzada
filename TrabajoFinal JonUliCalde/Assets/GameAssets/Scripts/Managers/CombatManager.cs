@@ -40,7 +40,8 @@ namespace enemyStatusConditions
         {
             PlayerTurn,
             EnemyTurn,
-            GameOverTurn
+            GameOverTurn,
+            EndCombatTurn
         }
 
         public TurnoCombat turnoActual;
@@ -94,7 +95,7 @@ namespace enemyStatusConditions
 
             int missChance = Random.Range(0, 1);
 
-            if ((critChance*0.5f) < missChance ) //if missess... 33% chance
+            if ((critChance * 0.5f) < missChance) //if missess... 33% chance
             {
                 //print("Misses");
                 InfoManager.Instance.AttackText("MISS!");
@@ -121,8 +122,23 @@ namespace enemyStatusConditions
                 turnoActual = TurnoCombat.PlayerTurn;
                 DisplayCombat.Instance.EnableButtonsAttack();
             }
+            else if (turnoActual == TurnoCombat.EndCombatTurn)
+            {
+                InfoManager.Instance.InfoChanger("Has ganado el combate!");
+                DisplayCombat.Instance.SwitchPanels();
+            }
+            else if (turnoActual == TurnoCombat.GameOverTurn)
+            {
+                InfoManager.Instance.InfoChanger("GAME OVER!");
+            }
         }
 
+        public void SetearTurnoRoom()
+        {
+            turnoActual = TurnoCombat.EnemyTurn;
+            print("GOGOGOGOG");
+            CambiarTurno();
+        }
 
 
         void SetCombatTurn(Character atacante, Character defensor)
@@ -197,11 +213,15 @@ namespace enemyStatusConditions
 
         }
 
+        public void EndCombat()
+        {
+            turnoActual = TurnoCombat.EndCombatTurn;
+        }
+
         public void EndGame()
         {
             turnoActual = TurnoCombat.GameOverTurn;
         }
-
 
 
     }
