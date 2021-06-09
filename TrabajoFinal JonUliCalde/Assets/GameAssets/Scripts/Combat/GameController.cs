@@ -24,9 +24,23 @@ namespace enemyStatusConditions
         [SerializeField] int waves;
         [SerializeField] int enemies;
         [SerializeField] int everyHowManyWavesToHeal;
+        int roomAmount;
 
         //public event EventHandler OnStartGame;
         public event EventHandler<StartGameArgs> OnCombatStart;
+        public event EventHandler<StartRoomArgs> OnRoomStart;
+
+
+
+        public void RandomizeRooms()
+        {
+            OnRoomStart?.Invoke(this, new StartRoomArgs(roomAmount));
+        }
+
+
+
+
+
 
         public void StartRoom()
         {
@@ -89,4 +103,15 @@ namespace enemyStatusConditions
 
 
     }
+
+    public class StartRoomArgs: EventArgs
+    {
+        public int roomAmount;
+
+        public StartRoomArgs(int _roomAmount)
+        {
+            this.roomAmount = _roomAmount;
+        }
+    }
+
 }

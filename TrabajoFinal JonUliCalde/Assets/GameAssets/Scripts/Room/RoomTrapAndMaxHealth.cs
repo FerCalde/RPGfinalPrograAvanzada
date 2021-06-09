@@ -4,11 +4,13 @@ using UnityEngine;
 
 namespace Rooms
 {
-    public abstract class RoomTrapAndMaxHealth : Room, IChangePlayerHealth, IPlayerMaxHealthIncreases
+    public class RoomTrapAndMaxHealth : RoomTrap, IChangePlayerHealth, IPlayerMaxHealthIncreases
     {
         int _healthModification; //It can be adding or substracting health.
+        int maxHpIncrement;
 
-        public int healthModification
+
+        public override int healthModification
         {
             get { return _healthModification; }
             set
@@ -17,13 +19,16 @@ namespace Rooms
             }
         }
 
-
-
-
-
-        public void UpdatePlayerHealth()
+        public RoomTrapAndMaxHealth(ScRoomTrapMaxHp data): base(data)
         {
-            _healthModification = -10;
+            maxHpIncrement = data.incrementoMaxHp;
+        }
+
+
+
+        public override void UpdatePlayerHealth()
+        {
+
             //_healthModification = CombatController.instance.heroDisplay.characterInstance.hp -= _healthModification;
             Debug.Log("Player receives damage: " + _healthModification);
         }

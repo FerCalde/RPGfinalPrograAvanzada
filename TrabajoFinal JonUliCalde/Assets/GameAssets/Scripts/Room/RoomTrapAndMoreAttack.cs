@@ -8,11 +8,12 @@ namespace Rooms
 {
     namespace enemyStatusConditions
     {
-        public abstract class RoomTrapAndMoreAttack : Room, IChangePlayerHealth, IPlayerCanDealMoreDamage
+        public class RoomTrapAndMoreAttack : RoomTrap, IChangePlayerHealth, IPlayerCanDealMoreDamage
         {
             int _healthModification; //It can be adding or substracting health.
+            int _moreAttack;
 
-            public int healthModification
+            public override int healthModification
             {
                 get { return _healthModification; }
                 set
@@ -21,13 +22,16 @@ namespace Rooms
                 }
             }
 
-
-
-
-
-            public void UpdatePlayerHealth()
+            public RoomTrapAndMoreAttack(ScRoomTrapMaxAttack data): base(data)
             {
-                _healthModification = -10;
+                _moreAttack = data.incrementoMaxAttack;
+            }
+
+
+
+            public override void UpdatePlayerHealth()
+            {
+
                 //_healthModification = CombatController.instance.heroDisplay.characterInstance.hp -= _healthModification;
                 Debug.Log("Player receives damage: " + _healthModification);
             }

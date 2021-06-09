@@ -6,9 +6,15 @@ using UnityEngine;
 
 namespace Rooms
 {
-    public abstract class RoomWithEnemies : Room, IEnemiesRoom
+    public class RoomWithEnemies : Room, IEnemiesRoom
     {
         
+
+        public RoomWithEnemies(ScRoomEnemies data): base(data._roomName, data._enemies)
+        {
+
+        }
+
         public void EnterEnemyRoom()
         {
              //Start enemy room

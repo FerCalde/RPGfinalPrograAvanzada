@@ -5,69 +5,140 @@ using UnityEngine;
 
 
 
-namespace enemyStatusConditions
+
+namespace Rooms
 {
-    public class RoomsInitializer : MonoBehaviour
+    namespace enemyStatusConditions
     {
-        int amountOfRooms = 10;
-        int actualRoom = 1;
-        GenericEnemiesQueue<Room>[] roomsArr;
-
-
-
-
-        void InitRooms()
+        public class RoomsInitializer : MonoBehaviour
         {
-            roomsArr = new GenericEnemiesQueue<Room>[amountOfRooms];
-            for (int i = 0; i < amountOfRooms; i++)
-            {
-                roomsArr[i] = new GenericEnemiesQueue<Room>();
-                //  object[] objectsData = Resources.LoadAll("ScObjects/Rooms", typeof(ScRoom)); //Change Route
+            int amountOfRooms = 10;
+            int actualRoom = 1;
+            GenericEnemiesQueue<Room>[] roomsArr;
 
-                /*for (int j = 0; j < enemiesPerWave; j++)
+
+
+
+            private void Start()
+            {
+                InitRooms();
+            }
+
+            public void InitRooms()
+            {
+                roomsArr = new GenericEnemiesQueue<Room>[amountOfRooms];
+
+                for (int i = 0; i < amountOfRooms; i++)
                 {
-                    Room room = new Room(roomsData[UnityEngine.Random.Range(0, room.Length)] as ScRoom);
-                    //enemy.hp = enemy.maxHp;
-                    roomsArr[i].PonerALaFila(room);
-                }*/
+                    roomsArr[i] = new GenericEnemiesQueue<Room>();
+
+                    int randomRoom = UnityEngine.Random.Range(0, 7);
+
+                    if (randomRoom.Equals(0))
+                    {
+                        roomsArr[i] = roomsArr[i] = new GenericEnemiesQueue<Room>();
+                        ScRoomEnemies[] roomsData = Resources.LoadAll<ScRoomEnemies>("ScObjects/Rooms");
+                        Room room = new RoomWithEnemies(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomEnemies);
+                        roomsArr[i].PonerALaFila(room);
+                    }
+
+                    else if (randomRoom.Equals(1))
+                    {
+                        roomsArr[i] = roomsArr[i] = new GenericEnemiesQueue<Room>();
+                        ScRoomTrapMaxAttack[] roomsData = Resources.LoadAll<ScRoomTrapMaxAttack>("ScObjects/Rooms");
+                        Room room = new RoomTrapAndMoreAttack(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomTrapMaxAttack);
+                        roomsArr[i].PonerALaFila(room);
+                    }
+
+                    else if (randomRoom.Equals(2))
+                    {
+                        roomsArr[i] = roomsArr[i] = new GenericEnemiesQueue<Room>();
+                        ScRoomTrapMaxHp[] roomsData = Resources.LoadAll<ScRoomTrapMaxHp>("ScObjects/Rooms");
+                        Room room = new RoomTrapAndMaxHealth(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomTrapMaxHp);
+                        roomsArr[i].PonerALaFila(room);
+                    }
+
+                    else if (randomRoom.Equals(3))
+                    {
+                        roomsArr[i] = roomsArr[i] = new GenericEnemiesQueue<Room>();
+                        ScRoomTrap[] roomsData = Resources.LoadAll<ScRoomTrap>("ScObjects/Rooms");
+                        Room room = new RoomTrap(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomTrap);
+                        roomsArr[i].PonerALaFila(room);
+                    }
+
+                    else if (randomRoom.Equals(4))
+                    {
+                        roomsArr[i] = roomsArr[i] = new GenericEnemiesQueue<Room>();
+                        ScRoomHealMaxHp[] roomsData = Resources.LoadAll<ScRoomHealMaxHp>("ScObjects/Rooms");
+                        Room room = new RoomRestoreHealthAndMaxHealth(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomHealMaxHp);
+                        roomsArr[i].PonerALaFila(room);
+                    }
+
+                    else if (randomRoom.Equals(5))
+                    {
+                        roomsArr[i] = roomsArr[i] = new GenericEnemiesQueue<Room>();
+                        ScRoomHealEnemies[] roomsData = Resources.LoadAll<ScRoomHealEnemies>("ScObjects/Rooms");
+                        Room room = new RoomRestoreHealthAndEnterEnemies(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomHealEnemies);
+                        roomsArr[i].PonerALaFila(room);
+                    }
+
+                    else if (randomRoom.Equals(6))
+                    {
+                        roomsArr[i] = roomsArr[i] = new GenericEnemiesQueue<Room>();
+                        ScRoomHeal[] roomsData = Resources.LoadAll<ScRoomHeal>("ScObjects/Rooms");
+                        Room room = new RoomRestoreHealth(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomHeal);
+                        roomsArr[i].PonerALaFila(room);
+                    }
+
+
+
+
+                    MakeNextRoomAppear();
+
+                    
+                }
             }
-        }
 
 
-        public void MakeNextRoomAppear()
-        {
-            StartCoroutine(NextRoom());
-        }
-
-        IEnumerator NextRoom()
-        {
-            yield return new WaitForSeconds(3);
-
-            if (roomsArr[actualRoom - 1].count > 0)
+            public void MakeNextRoomAppear()
             {
-                RoomManager.Instance.room = roomsArr[actualRoom - 1].QuitarDeLaFila();
-                RoomManager.Instance.room.UpdateDisplayData();
-
-                
-
-
+                StartCoroutine(NextRoom());
             }
-            else
+
+            IEnumerator NextRoom()
             {
-                actualRoom++;
-                if (roomsArr.Length >= actualRoom)
+                yield return new WaitForSeconds(3);
+
+
+                if (roomsArr[actualRoom - 1].count > 0)
                 {
                     RoomManager.Instance.room = roomsArr[actualRoom - 1].QuitarDeLaFila();
                     RoomManager.Instance.room.UpdateDisplayData();
+
+
+
+
                 }
                 else
                 {
-                    //END GAME
-                    //RoomManager.Instance.room.EndGame();
+                    actualRoom++;
+                    if (roomsArr.Length >= actualRoom)
+                    {
+                        RoomManager.Instance.room = roomsArr[actualRoom - 1].QuitarDeLaFila();
+                        RoomManager.Instance.room.UpdateDisplayData();
+                    }
+                    else
+                    {
+                        //END GAME
+                        //RoomManager.Instance.room.EndGame();
 
+                    }
                 }
             }
         }
     }
-
+    
 }
+
+
+
