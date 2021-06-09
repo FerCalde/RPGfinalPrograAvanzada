@@ -16,8 +16,8 @@ namespace enemyStatusConditions
 
         GenericEnemiesQueue<Enemy>[] enemyWavesArr;
 
-        // Start is called before the first frame update
-        private void Start()
+
+        public void StartBattle()
         {
             //combatPanel.SetActive(false);
             GameController.instance.OnCombatStart += ShowContent;

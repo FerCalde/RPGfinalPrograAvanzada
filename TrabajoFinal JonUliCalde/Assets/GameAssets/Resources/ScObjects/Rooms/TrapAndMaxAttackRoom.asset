@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: TrapAndMaxAttackRoom
   m_EditorClassIdentifier: 
   _roomName: TrapAndMaxAttackRoom
-  waves: 0
-  enemies: 0
+  _enemies: 0
+  damageTrampa: 15
+  incrementoMaxAttack: 5

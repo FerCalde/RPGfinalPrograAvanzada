@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: EnemiesRoom
   m_EditorClassIdentifier: 
   _roomName: EnemiesRoom
-  waves: 2
-  enemies: 3
+  _enemies: 1

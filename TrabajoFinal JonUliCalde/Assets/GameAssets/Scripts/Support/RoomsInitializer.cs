@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using enemyStatusConditions;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,16 +22,18 @@ namespace Rooms
 
             private void Start()
             {
-                InitRooms();
+                //InitRooms();
             }
 
-            public void InitRooms()
+
+
+            public void InitRooms() //Called from buttons.
             {
                 roomsArr = new GenericEnemiesQueue<Room>[amountOfRooms];
 
                 for (int i = 0; i < amountOfRooms; i++)
                 {
-                    roomsArr[i] = new GenericEnemiesQueue<Room>();
+                    //roomsArr[i] = new GenericEnemiesQueue<Room>();
 
                     int randomRoom = UnityEngine.Random.Range(0, 7);
 
@@ -93,10 +96,11 @@ namespace Rooms
 
 
 
-                    MakeNextRoomAppear();
+                    
 
                     
                 }
+                MakeNextRoomAppear();
             }
 
 
@@ -107,13 +111,27 @@ namespace Rooms
 
             IEnumerator NextRoom()
             {
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(1.5f);
+                //check current room
 
+                
 
                 if (roomsArr[actualRoom - 1].count > 0)
                 {
                     RoomManager.Instance.room = roomsArr[actualRoom - 1].QuitarDeLaFila();
-                    RoomManager.Instance.room.UpdateDisplayData();
+                    EnemyWave eW;
+                    if (RoomManager.Instance.room.hasEnemies)
+                    {
+                        eW = FindObjectOfType<EnemyWave>();
+                        eW.MakeNextEnemyAppear();
+                        Debug.Log("Tiene enemigos");
+                    }
+                    else
+                        Debug.Log("No tiene enemigos");
+                        
+                        //CombatManager.Instance
+
+                        //RoomManager.Instance.room.UpdateDisplayData();
 
 
 
@@ -126,6 +144,7 @@ namespace Rooms
                     {
                         RoomManager.Instance.room = roomsArr[actualRoom - 1].QuitarDeLaFila();
                         RoomManager.Instance.room.UpdateDisplayData();
+                        actualRoom++;
                     }
                     else
                     {
