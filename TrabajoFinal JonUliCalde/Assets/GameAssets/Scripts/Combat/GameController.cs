@@ -26,7 +26,7 @@ namespace enemyStatusConditions
         [SerializeField] int everyHowManyWavesToHeal;
         int roomAmount;
 
-        //public event EventHandler OnStartGame;
+        //public event EventH   andler OnStartGame;
         public event EventHandler<StartGameArgs> OnCombatStart;
         public event EventHandler<StartRoomArgs> OnRoomStart;
 
@@ -55,7 +55,6 @@ namespace enemyStatusConditions
 
         public void EmpezarCombateRoom()
         {
-
 
             RandomizeWaves();
             /*int waves = int.Parse(wavesIField.text);

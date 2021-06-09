@@ -27,9 +27,13 @@ namespace Rooms
 
         public void UpdateDisplayData()//Updates the name of the room 
         {
-             roomNameText.text = "Current room: " + roomName;
+            roomNameText.text = "Current room: " + roomName;
         }
 
-    }
 
+        public virtual void ActivarRoom()
+        {
+
+        }
+    }
 }

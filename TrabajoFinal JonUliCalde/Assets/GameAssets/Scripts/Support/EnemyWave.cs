@@ -17,7 +17,7 @@ namespace enemyStatusConditions
         GenericEnemiesQueue<Enemy>[] enemyWavesArr;
 
 
-        public void StartBattle()
+        public void Start()
         {
             //combatPanel.SetActive(false);
             GameController.instance.OnCombatStart += ShowContent;
@@ -41,7 +41,7 @@ namespace enemyStatusConditions
         }
 
 
-        void Init()
+        public void Init()
         {
             enemyWavesArr = new GenericEnemiesQueue<Enemy>[waves];
             for (int i = 0; i < waves; i++)
@@ -166,6 +166,7 @@ namespace enemyStatusConditions
                 }
                 else
                 {
+                    PlayerController.Instance.vida = CombatManager.instance.dCPlayer.characterInstance.hp;
                     CombatManager.instance.EndCombat();
                     
                 }
