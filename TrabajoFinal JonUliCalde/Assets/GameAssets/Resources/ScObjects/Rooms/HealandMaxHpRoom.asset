@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d192e0b86142642a002b54487cede6, type: 3}
   m_Name: HealandMaxHpRoom
   m_EditorClassIdentifier: 
-  _roomName: 
+  _roomName: HealandMaxHpRoom
+  waves: 0
+  enemies: 0
