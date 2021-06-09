@@ -140,7 +140,7 @@ namespace enemyStatusConditions
         {
 
 
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1.5f);
 
             if (enemyWavesArr[actualWave - 1].count > 0)
             {
