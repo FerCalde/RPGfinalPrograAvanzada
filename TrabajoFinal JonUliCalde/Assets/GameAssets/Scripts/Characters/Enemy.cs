@@ -15,7 +15,10 @@ namespace enemyStatusConditions
             base.TakeDamage(ammount);
             if (hp == 0)
             {
+
+                ProgresManager.Instance.UpdateCurrentEnemiesKilled();
                 GameObject.FindObjectOfType<EnemyWave>().MakeNextEnemyAppear();
+                
             }
         }
         public override void ChoseEnemyAction(int amount, Character targetToGo)
