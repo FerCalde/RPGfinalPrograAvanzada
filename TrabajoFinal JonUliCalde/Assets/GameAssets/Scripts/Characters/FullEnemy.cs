@@ -24,7 +24,7 @@ namespace enemyStatusConditions
         }
         public override void ChoseEnemyAction(int amount, Character targetToGo)
         {
-            float random = Random.Range(0, 1);
+            float random = Random.Range(0, 1.1f);
             if (hp >= (maxHp / 2))
             {
                 if (random > 0.8f)
@@ -33,7 +33,7 @@ namespace enemyStatusConditions
                 }
                 else
                 {
-                    float randomTwo = Random.Range(0, 1);
+                    float randomTwo = Random.Range(0, 1.1f);
                     if (randomTwo > 0.3f)
                     {
                         int turnsPoison = Mathf.RoundToInt(amount / 6);
@@ -48,7 +48,7 @@ namespace enemyStatusConditions
             }
             else
             {
-                if (random < 0.6f)
+                if (random < 0.5f)
                 {
                     GetRest(amount);
                 }
