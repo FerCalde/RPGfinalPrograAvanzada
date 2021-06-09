@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HealAndEnemiesRoom
   m_EditorClassIdentifier: 
   _roomName: HealAndEnemiesRoom
-  waves: 1
-  enemies: 4
+  _enemies: 1
+  hpRecoveri: 10
