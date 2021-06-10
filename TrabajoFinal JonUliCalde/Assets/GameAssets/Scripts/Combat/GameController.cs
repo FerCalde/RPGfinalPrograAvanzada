@@ -77,8 +77,8 @@ namespace enemyStatusConditions
 
         public void RandomizeWaves()
         {
-            waves = 1;// UnityEngine.Random.Range(1, 5);
-            enemies = 1;//UnityEngine.Random.Range(1, 5);
+            waves = 2;// UnityEngine.Random.Range(1, 5);
+            enemies = 2;//UnityEngine.Random.Range(1, 5);
             everyHowManyWavesToHeal = 1;// UnityEngine.Random.Range(1, 5);
 
             //InfoManager.Instance.CombatWaveEnemiesInfo(waves, enemies);
