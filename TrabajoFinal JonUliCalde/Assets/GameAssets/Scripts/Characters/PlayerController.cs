@@ -20,7 +20,7 @@ namespace enemyStatusConditions
         // Start is called before the first frame update
         void Start()
         {
-            //GenerateHeroInstance();
+            GenerateHeroInstance();
             GameController.instance.OnCombatStart += SetPlayerInCharDisplay;
             
         }
@@ -38,7 +38,7 @@ namespace enemyStatusConditions
 
         void SetPlayerInCharDisplay(object sender, StartGameArgs e)
         {
-            GenerateHeroInstance();
+            //GenerateHeroInstance();
             heroInstance.hp = vida;
             //heroInstance.hp = heroInstance.maxHp;
             CombatManager.instance.dCPlayer.characterInstance = heroInstance;
