@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Rooms;
 
 namespace enemyStatusConditions
 {
@@ -19,8 +19,9 @@ namespace enemyStatusConditions
 
             if (hp == 0)
             {
-                Debug.Log("Its Fking dead");
-                GameObject.FindObjectOfType<EnemyWave>().MakeNextEnemyAppear();
+                //Debug.Log("Its Fking dead");
+                //EnemyWave.Instance.MakeNextEnemyAppear();
+                CombatManager.instance.EndGame();
             }
         }
 
@@ -62,7 +63,7 @@ namespace enemyStatusConditions
             {
                 GetRest(amount);
             }
-            Debug.Log(" Ataqueeeee " + kindAttack);
+           // Debug.Log(" Ataqueeeee " + kindAttack);
             /*
             for (int i = 0; i < plAttacks.Length; i++)
             {

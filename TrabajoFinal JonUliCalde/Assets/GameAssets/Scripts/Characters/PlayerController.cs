@@ -31,6 +31,7 @@ namespace enemyStatusConditions
             heroData = Resources.Load("ScObjects/Personajes/Player");
             heroInstance = new Player(heroData as ScPlayer);
             attack = heroInstance.attack;
+            heroInstance.hp = vida;
             
 
         }
@@ -39,7 +40,7 @@ namespace enemyStatusConditions
         void SetPlayerInCharDisplay(object sender, StartGameArgs e)
         {
             //GenerateHeroInstance();
-            heroInstance.hp = vida;
+            //heroInstance.hp = vida;
             //heroInstance.hp = heroInstance.maxHp;
             CombatManager.instance.dCPlayer.characterInstance = heroInstance;
             CombatManager.instance.dCPlayer.ActualiceDisplayData();
@@ -48,15 +49,18 @@ namespace enemyStatusConditions
 
         public void GetBonusHp(int value)
         {
+            vida += value; //Solo para testear Debug
             heroInstance.hp += value;
         }
         public void GetBonusMaxHp(int value)
         {
-            bonusMaxVida += value;
+            bonusMaxVida += value; //Solo para testear Debug
+            heroInstance.maxHp += value;
         }
         public void GetBonusAttack(int value)
         {
-            bonusAttack += value;
+            bonusAttack += value; //Solo para testear Debug
+            heroInstance.attack += value;
         }
         
     }

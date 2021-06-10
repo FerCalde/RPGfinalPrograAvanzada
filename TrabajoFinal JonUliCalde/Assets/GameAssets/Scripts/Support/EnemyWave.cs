@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace enemyStatusConditions
 {
-    public class EnemyWave : MonoBehaviour
+    public class EnemyWave : SingletonTemporal<EnemyWave>
     {
         int waves;
         int enemiesPerWave;
