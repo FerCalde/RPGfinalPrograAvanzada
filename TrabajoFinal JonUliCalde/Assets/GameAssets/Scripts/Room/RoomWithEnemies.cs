@@ -26,6 +26,7 @@ namespace Rooms
         public override void ActivarRoom()
         {
             EnterEnemyRoom();
+            InfoManager.Instance.InfoChanger("Aparecieron enemigos");
         }
 
     }
