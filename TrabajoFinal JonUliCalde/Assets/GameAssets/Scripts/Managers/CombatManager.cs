@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Rooms;
 
 
@@ -173,7 +174,7 @@ namespace enemyStatusConditions
 
             //TEXT CRITICAL 
 
-            /* if (totalDamage > dCPlayer.characterInstance.attack)
+             if (totalDamage > dCPlayer.characterInstance.attack)
              {
                  InfoManager.Instance.AttackText("CRITICAL!");
              }
@@ -186,7 +187,7 @@ namespace enemyStatusConditions
              {
 
                  InfoManager.Instance.AttackText("MISS!");
-             }*/
+             }
 
 
 
@@ -221,6 +222,13 @@ namespace enemyStatusConditions
         public void EndGame()
         {
             turnoActual = TurnoCombat.GameOverTurn;
+            StartCoroutine(RestartScene());
+        }
+        IEnumerator RestartScene()
+        {
+
+            yield return new WaitForSeconds(5f);
+            SceneManager.LoadScene(0);
         }
 
 

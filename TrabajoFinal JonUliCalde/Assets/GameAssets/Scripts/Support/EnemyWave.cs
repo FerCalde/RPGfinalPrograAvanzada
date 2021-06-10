@@ -171,7 +171,7 @@ namespace enemyStatusConditions
                 {
                     PlayerController.Instance.vida = CombatManager.instance.dCPlayer.characterInstance.hp;
                     CombatManager.instance.EndCombat();
-                    
+                    actualWave = 1;
                 }
             }
 
