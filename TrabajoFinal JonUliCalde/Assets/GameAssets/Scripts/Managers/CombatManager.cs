@@ -94,9 +94,9 @@ namespace enemyStatusConditions
         {
             //print("critChance value: " + critChance);
 
-            int missChance = Random.Range(0, 1);
-
-            if ((critChance * 0.5f) < missChance) //if missess... 33% chance
+            float missChance = Random.Range(0, 5);
+            Debug.Log("Miss chance: " + missChance);
+            if ((missChance <= 1)) //if missess...
             {
                 //print("Misses");
                 InfoManager.Instance.AttackText("MISS!");
