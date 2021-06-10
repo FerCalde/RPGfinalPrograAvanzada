@@ -75,14 +75,15 @@ namespace enemyStatusConditions
         {
             //print("basicDamage value: " + basicDamage);
 
-            float crit = Random.Range(0, 1);
+            float crit = Random.Range(0, 1.1f);
 
-            if ((critChance) < crit)
+            if ((critChance) > crit)
             {
                 InfoManager.Instance.AttackText("CRITICAL!");
                 //print("Crits");
                 total *= 2;
             }
+            Debug.Log(critChance +" posibilidad critico");
 
         }
 
@@ -94,9 +95,9 @@ namespace enemyStatusConditions
         {
             //print("critChance value: " + critChance);
 
-            float missChance = Random.Range(0, 5);
+            float missChance = Random.Range(0, 1.1f);
             Debug.Log("Miss chance: " + missChance);
-            if ((missChance <= 1)) //if missess...
+            if (critChance > missChance) //if missess...
             {
                 //print("Misses");
                 InfoManager.Instance.AttackText("MISS!");
@@ -104,7 +105,10 @@ namespace enemyStatusConditions
                 total = 0;
             }
             else
+            {
                 hasMissed = false;
+            }
+               
 
             //if character is stunned, missChance = 66%; 
         }
@@ -174,7 +178,7 @@ namespace enemyStatusConditions
 
             //TEXT CRITICAL 
 
-             if (totalDamage > dCPlayer.characterInstance.attack)
+             /*if (totalDamage > dCPlayer.characterInstance.attack)
              {
                  InfoManager.Instance.AttackText("CRITICAL!");
              }
@@ -187,7 +191,7 @@ namespace enemyStatusConditions
              {
 
                  InfoManager.Instance.AttackText("MISS!");
-             }
+             }*/
 
 
 
