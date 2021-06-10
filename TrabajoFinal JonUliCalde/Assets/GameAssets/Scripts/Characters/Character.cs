@@ -43,7 +43,7 @@ namespace enemyStatusConditions
             name = _name;
             attack = _atk;
             critChance = _crit;
-            critChance = _crit;
+            //critChance = _crit;
         }
 
         public virtual void TakeDamage(int amount)
