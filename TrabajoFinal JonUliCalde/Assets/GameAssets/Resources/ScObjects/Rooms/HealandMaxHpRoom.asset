@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d192e0b86142642a002b54487cede6, type: 3}
   m_Name: HealandMaxHpRoom
   m_EditorClassIdentifier: 
-  _roomName: HealandMaxHpRoom
+  _roomName: Descanso y runa de proteccion
   _enemies: 0
   hpRecoveri: 15
   incrementoMaxHp: 5
