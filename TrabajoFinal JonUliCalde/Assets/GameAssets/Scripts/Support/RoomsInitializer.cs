@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 
 
@@ -34,7 +35,7 @@ namespace Rooms
                 for (int i = 0; i < amountOfRooms; i++)
                 {
                     //roomsArr[i] = new GenericEnemiesQueue<Room>();
-                    int randomRoom = UnityEngine.Random.Range(0, 7);
+                    int randomRoom = UnityEngine.Random.Range(0, 5);
 
                     if (randomRoom.Equals(0))
                     {
@@ -63,15 +64,29 @@ namespace Rooms
                         roomsArr[i].PonerALaFila(room);
                     }
 
-                    else if (randomRoom.Equals(3))
+                   /* else if (randomRoom.Equals(1))
                     {
                         roomsArr[i] = new GenericEnemiesQueue<Room>();
                         ScRoomTrap[] roomsData = Resources.LoadAll<ScRoomTrap>("ScObjects/Rooms");
-                        Room room = new RoomTrap(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomTrap);
-                        roomsArr[i].PonerALaFila(room);
-                    }
+                        //Room room = new RoomTrap(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomTrap);
 
-                    else if (randomRoom.Equals(4))
+                        var trapMaxAttack = roomsData.OfType<ScRoomTrapMaxAttack>();
+                        var trapMaxHP = roomsData.OfType<ScRoomTrapMaxHp>();
+                        
+                        foreach (ScRoomTrapMaxAttack rData in trapMaxAttack)
+                        {
+                            Room room = new RoomTrapAndMoreAttack(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomTrapMaxAttack);
+                             roomsArr[i].PonerALaFila(room);
+                        }
+                        foreach (ScRoomTrapMaxHp rData in trapMaxHP)
+                        {
+                            Room room = new RoomTrapAndMaxHealth(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomTrapMaxHp);
+                            roomsArr[i].PonerALaFila(room);
+                        }
+                       
+                    }*/
+
+                    else if (randomRoom.Equals(3))
                     {
                         roomsArr[i] = new GenericEnemiesQueue<Room>();
                         ScRoomHealMaxHp[] roomsData = Resources.LoadAll<ScRoomHealMaxHp>("ScObjects/Rooms");
@@ -79,7 +94,7 @@ namespace Rooms
                         roomsArr[i].PonerALaFila(room);
                     }
 
-                    else if (randomRoom.Equals(5))
+                    else if (randomRoom.Equals(4))
                     {
                         roomsArr[i] = new GenericEnemiesQueue<Room>();
                         ScRoomHealEnemies[] roomsData = Resources.LoadAll<ScRoomHealEnemies>("ScObjects/Rooms");
@@ -87,8 +102,9 @@ namespace Rooms
                         roomsArr[i].PonerALaFila(room);
                     }
 
-                    else if (randomRoom.Equals(6))
+                    /*else if (randomRoom.Equals(2))
                     {
+<<<<<<< Updated upstream
                         roomsArr[i] = new GenericEnemiesQueue<Room>();
                         ScRoomHeal[] roomsData = Resources.LoadAll<ScRoomHeal>("ScObjects/Rooms");
                         Room room = new RoomRestoreHealth(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomHeal);
@@ -97,6 +113,29 @@ namespace Rooms
 
 
                     }
+=======
+                        
+                        roomsArr[i] = new GenericEnemiesQueue<Room>();
+                        ScRoomHeal[] roomsData = Resources.LoadAll<ScRoomHeal>("ScObjects/Rooms");
+                        //Room room = new RoomRestoreHealth(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomHeal);
+                        //if (roomsData[i])
+
+                        var healAndEnemies = roomsData.OfType<ScRoomHealEnemies>();
+                        var healMaxHP = roomsData.OfType<ScRoomHealMaxHp>();
+                        
+                        foreach (ScRoomHealEnemies rData in healAndEnemies)
+                        {
+                            Room room = new RoomRestoreHealthAndEnterEnemies(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomHealEnemies);
+                            roomsArr[i].PonerALaFila(room);
+                        }
+                        foreach (ScRoomHealMaxHp rData in healMaxHP)
+                        {
+                            Room room = new RoomRestoreHealthAndMaxHealth(roomsData[UnityEngine.Random.Range(0, roomsData.Length)] as ScRoomHealMaxHp);
+                            roomsArr[i].PonerALaFila(room);
+                        }
+                        
+                    }*/
+>>>>>>> Stashed changes
 
 
 
