@@ -17,7 +17,7 @@ namespace enemyStatusConditions
             {
 
                EnemyWave.Instance.MakeNextEnemyAppear();
-               //ProgresManager.Instance.UpdateCurrentEnemiesKilled();
+               ProgresManager.Instance.UpdateCurrentEnemiesKilled();
                 
             }
         }

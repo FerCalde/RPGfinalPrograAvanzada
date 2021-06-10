@@ -161,7 +161,7 @@ namespace enemyStatusConditions
             else
             {
                 actualWave++;
-                if (enemyWavesArr.Length-1 >= actualWave)
+                if (enemyWavesArr.Length >= actualWave)
                 {
                     CombatManager.instance.dCEnemy.characterInstance = enemyWavesArr[actualWave - 1].QuitarDeLaFila();
                     CombatManager.instance.dCEnemy.ActualiceDisplayData();
