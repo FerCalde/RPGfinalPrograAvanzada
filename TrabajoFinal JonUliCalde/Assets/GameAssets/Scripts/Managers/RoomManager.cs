@@ -13,7 +13,10 @@ namespace Rooms
 
         public Room room;
 
-
+        public void DisplayRoomName()
+        {
+            roomName.text = room.roomName;
+        }
 
     }
 
