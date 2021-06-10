@@ -41,7 +41,7 @@ namespace Rooms
         {
             UpdatePlayerHealth();
             EnterEnemyRoom();
-
+            InfoManager.Instance.InfoChanger("Has recibido una cura, pero tambien aparecieron enemigos");
         }
 
 

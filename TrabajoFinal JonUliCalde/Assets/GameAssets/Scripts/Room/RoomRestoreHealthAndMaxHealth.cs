@@ -42,7 +42,7 @@ namespace Rooms
         {
             UpdatePlayerHealth();
             IncreasePlayerMaxHealth();
-
+            InfoManager.Instance.InfoChanger("Has recibido una cura, además aumento tu vida maxima");
         }
 
 

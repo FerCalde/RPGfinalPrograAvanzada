@@ -43,7 +43,7 @@ namespace Rooms
         {
             UpdatePlayerHealth();
             IncreasePlayerMaxHealth();
-
+            InfoManager.Instance.InfoChanger("Te la comiste pelotudo, pero ahora tu vida maxima es mayor");
         }
 
 
