@@ -153,8 +153,8 @@ namespace enemyStatusConditions
                     //Recuperamos vida jugador.
                     //yield return new WaitForSeconds(3);
                 }*/
+              
 
-                
             }
             else
             {
@@ -171,6 +171,8 @@ namespace enemyStatusConditions
                     
                 }
             }
+
+          
         }
 
     }
