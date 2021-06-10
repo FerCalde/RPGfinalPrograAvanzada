@@ -16,8 +16,8 @@ namespace enemyStatusConditions
             if (hp == 0)
             {
 
-                ProgresManager.Instance.UpdateCurrentEnemiesKilled();
-                GameObject.FindObjectOfType<EnemyWave>().MakeNextEnemyAppear();
+               ProgresManager.Instance.UpdateCurrentEnemiesKilled();
+               EnemyWave.Instance.MakeNextEnemyAppear();
                 
             }
         }

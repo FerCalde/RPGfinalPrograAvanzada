@@ -118,6 +118,7 @@ namespace Rooms
                 if (roomsArr[actualRoom - 1].count > 0)
                 {
                     RoomManager.Instance.room = roomsArr[actualRoom - 1].QuitarDeLaFila();
+                    //ProgresManager.Instance.UpdateCurrentRooms();
                     RoomManager.Instance.DisplayRoomName();
                     RoomManager.Instance.room.ActivarRoom();
                     /*if (RoomManager.Instance.room.hasEnemies)
