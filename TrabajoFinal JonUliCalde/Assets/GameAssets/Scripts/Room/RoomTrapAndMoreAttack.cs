@@ -46,8 +46,8 @@ namespace Rooms
             {
                 UpdatePlayerHealth();
                 PlayerDealMoreDamage();
-                
 
+                InfoManager.Instance.InfoChanger("Te la comiste pelotudo, pero ahora tu ataque es mas potente");
             }
 
 

@@ -36,7 +36,7 @@ namespace Rooms
         public override void ActivarRoom()
         {
             UpdatePlayerHealth();
-
+            InfoManager.Instance.InfoChanger("Te la comiste pelotudo");
         }
 
     }
