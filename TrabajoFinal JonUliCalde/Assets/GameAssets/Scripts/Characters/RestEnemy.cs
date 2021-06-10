@@ -18,7 +18,7 @@ namespace enemyStatusConditions
             float random = Random.Range(0, 1.1f);
             if (hp >= (maxHp/2))
             {
-                if (random > 0.7f)
+                if (random > 0.8f)
                 {
                     GetRest(amount);
                 }
