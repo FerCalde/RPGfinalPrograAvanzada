@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777565d8f5b73b6419d8f792bb49af4c, type: 3}
   m_Name: TrapAndMaxHpRoom
   m_EditorClassIdentifier: 
-  _roomName: TrapAndMaxHpRoom
+  _roomName: Trampa y runa de proteccion
   _enemies: 0
   damageTrampa: 20
   incrementoMaxHp: 5

@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using Rooms;
 
 
 namespace enemyStatusConditions
@@ -74,14 +75,15 @@ namespace enemyStatusConditions
         {
             //print("basicDamage value: " + basicDamage);
 
-            float crit = Random.Range(0, 1);
+            float crit = Random.Range(0, 1.1f);
 
-            if ((critChance) < crit)
+            if ((critChance) > crit)
             {
                 InfoManager.Instance.AttackText("CRITICAL!");
                 //print("Crits");
                 total *= 2;
             }
+            Debug.Log(critChance +" posibilidad critico");
 
         }
 
@@ -93,9 +95,9 @@ namespace enemyStatusConditions
         {
             //print("critChance value: " + critChance);
 
-            int missChance = Random.Range(0, 1);
-
-            if ((critChance * 0.5f) < missChance) //if missess... 33% chance
+            float missChance = Random.Range(0, 1.1f);
+            Debug.Log("Miss chance: " + missChance);
+            if (critChance > missChance) //if missess...
             {
                 //print("Misses");
                 InfoManager.Instance.AttackText("MISS!");
@@ -103,7 +105,10 @@ namespace enemyStatusConditions
                 total = 0;
             }
             else
+            {
                 hasMissed = false;
+            }
+               
 
             //if character is stunned, missChance = 66%; 
         }
@@ -173,7 +178,7 @@ namespace enemyStatusConditions
 
             //TEXT CRITICAL 
 
-            /* if (totalDamage > dCPlayer.characterInstance.attack)
+             /*if (totalDamage > dCPlayer.characterInstance.attack)
              {
                  InfoManager.Instance.AttackText("CRITICAL!");
              }
@@ -221,6 +226,13 @@ namespace enemyStatusConditions
         public void EndGame()
         {
             turnoActual = TurnoCombat.GameOverTurn;
+            StartCoroutine(RestartScene());
+        }
+        IEnumerator RestartScene()
+        {
+
+            yield return new WaitForSeconds(5f);
+            SceneManager.LoadScene(0);
         }
 
 

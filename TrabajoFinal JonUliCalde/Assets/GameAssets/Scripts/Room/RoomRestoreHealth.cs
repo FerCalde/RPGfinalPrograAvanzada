@@ -38,6 +38,7 @@ namespace Rooms
         public override void ActivarRoom()
         {
             UpdatePlayerHealth();
+            InfoManager.Instance.InfoChanger("Has recibido una cura");
         }
 
 
