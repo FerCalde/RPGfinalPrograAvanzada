@@ -27,9 +27,17 @@ namespace enemyStatusConditions
             float random = Random.Range(0, 1.1f);
             if (hp >= (maxHp / 2))
             {
-                if (random > 0.7f)
+                if (random >= 0.6f)
                 {
-                    GetRest(amount);
+                    if(random > 0.9f)
+                    {
+                        GetRest(amount);
+                    }
+                    else
+                    {
+                        RegularAttack(amount, targetToGo);
+                    }
+                    
                 }
                 else
                 {
@@ -48,7 +56,7 @@ namespace enemyStatusConditions
             }
             else
             {
-                if (random < 0.5f)
+                if (random <= 0.5f)
                 {
                     GetRest(amount);
                 }

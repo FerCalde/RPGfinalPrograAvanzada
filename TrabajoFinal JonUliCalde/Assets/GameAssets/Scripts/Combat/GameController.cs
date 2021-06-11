@@ -57,8 +57,6 @@ namespace enemyStatusConditions
         {
 
             RandomizeWaves();
-
-
             /*int waves = int.Parse(wavesIField.text);
             int enemies = int.Parse(enemiesIField.text);*/
             //startPanel.SetActive(false);
@@ -79,14 +77,11 @@ namespace enemyStatusConditions
 
         public void RandomizeWaves()
         {
-            //Si ponemos mas de 1 wave, el enemigo no muere nunca, se queda en bucle
-            waves = 1;//Mathf.RoundToInt( UnityEngine.Random.Range(1, 5));
-            //si ponemos mas de 1 enemigo, cuando el player realiza la 1ºAccion instant gana el combate
-            //(debe haber un enemigo que no tenga vida o sea=0, por lo que manda el evento de combatEnd
-            enemies = 1;//Mathf.RoundToInt(UnityEngine.Random.Range(1, 5));
-            everyHowManyWavesToHeal = 1;// UnityEngine.Random.Range(1, 5);
+            waves = UnityEngine.Random.Range(1, 3);
+            enemies = UnityEngine.Random.Range(1, 4);
+            everyHowManyWavesToHeal = 1;// UnityEngine.Random.Range(1, 5);//FUNCIONALIDAD OBSOLETA
 
-            //InfoManager.Instance.CombatWaveEnemiesInfo(waves, enemies);
+            InfoManager.Instance.CombatWaveEnemiesInfo(waves, enemies);
 
         }
 
