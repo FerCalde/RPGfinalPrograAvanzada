@@ -89,7 +89,7 @@ namespace enemyStatusConditions
                         //enemyWavesArr[i] = new GenericEnemiesQueue<Enemy>();
                         ScEnemy[] enemiesData = Resources.LoadAll<ScEnemy>("ScObjects/Enemies");
                         Enemy enemy = new Enemy(enemiesData[UnityEngine.Random.Range(0, enemiesData.Length)] as ScEnemy);
-                        enemy.hp = enemy.maxHp;
+                        enemy.hp = enemy._maxHp;
                         enemyWavesArr[i].PonerALaFila(enemy);
                     }
                     if (randomClass == 1)
@@ -97,7 +97,7 @@ namespace enemyStatusConditions
                         //enemyWavesArr[i] = new GenericEnemiesQueue<Enemy>();
                         ScPoisonEnemy[] enemiesData = Resources.LoadAll<ScPoisonEnemy>("ScObjects/Enemies");
                         PoisonEnemy enemy = new PoisonEnemy(enemiesData[UnityEngine.Random.Range(0, enemiesData.Length)] as ScPoisonEnemy);
-                        enemy.hp = enemy.maxHp;
+                        enemy.hp = enemy._maxHp;
                         enemyWavesArr[i].PonerALaFila(enemy);
                     }
                     if (randomClass == 2)
@@ -105,7 +105,7 @@ namespace enemyStatusConditions
                         //enemyWavesArr[i] = new GenericEnemiesQueue<Enemy>();
                         ScStunEnemy[] enemiesData = Resources.LoadAll<ScStunEnemy>("ScObjects/Enemies");
                         StunEnemy enemy = new StunEnemy(enemiesData[UnityEngine.Random.Range(0, enemiesData.Length)] as ScStunEnemy);
-                        enemy.hp = enemy.maxHp;
+                        enemy.hp = enemy._maxHp;
                         enemyWavesArr[i].PonerALaFila(enemy);
                     }
                     if (randomClass == 3)
@@ -113,7 +113,7 @@ namespace enemyStatusConditions
                         //enemyWavesArr[i] = new GenericEnemiesQueue<Enemy>();
                         ScRestEnemy[] enemiesData = Resources.LoadAll<ScRestEnemy>("ScObjects/Enemies");
                         RestEnemy enemy = new RestEnemy(enemiesData[UnityEngine.Random.Range(0, enemiesData.Length)] as ScRestEnemy);
-                        enemy.hp = enemy.maxHp;
+                        enemy.hp = enemy._maxHp;
                         enemyWavesArr[i].PonerALaFila(enemy);
                     }
                     if (randomClass == 4)
@@ -121,7 +121,7 @@ namespace enemyStatusConditions
                         //enemyWavesArr[i] = new GenericEnemiesQueue<Enemy>();
                         ScAllAttacksEnemy[] enemiesData = Resources.LoadAll<ScAllAttacksEnemy>("ScObjects/Enemies");
                         FullEnemy enemy = new FullEnemy(enemiesData[UnityEngine.Random.Range(0, enemiesData.Length)] as ScAllAttacksEnemy);
-                        enemy.hp = enemy.maxHp;
+                        enemy.hp = enemy._maxHp;
                         enemyWavesArr[i].PonerALaFila(enemy);
                     }
 

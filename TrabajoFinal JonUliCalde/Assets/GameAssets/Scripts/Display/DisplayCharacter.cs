@@ -61,7 +61,7 @@ namespace enemyStatusConditions
         {
             //print(value + " ES la vida");
 
-            float width = (float)(value * 360) / (float)characterInstance.maxHp;
+            float width = (float)(value * 360) / (float)characterInstance._maxHp;
             hp.rectTransform.sizeDelta = new Vector2((float)width, hp.rectTransform.sizeDelta.y);
             vidaHp.text = "Vida: " + characterInstance.hp;
             //hp.fillAmount = width;
