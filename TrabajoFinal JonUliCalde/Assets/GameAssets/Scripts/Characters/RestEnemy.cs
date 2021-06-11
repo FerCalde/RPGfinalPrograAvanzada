@@ -16,7 +16,7 @@ namespace enemyStatusConditions
         public override void ChoseEnemyAction(int amount, Character targetToGo)
         {
             float random = Random.Range(0, 1.1f);
-            if (hp >= (maxHp/2))
+            if (hp >= (_maxHp/2))
             {
                 if (random > 0.8f)
                 {

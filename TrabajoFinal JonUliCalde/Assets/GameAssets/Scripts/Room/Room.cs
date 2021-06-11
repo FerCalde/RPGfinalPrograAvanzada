@@ -33,7 +33,7 @@ namespace Rooms
 
         public virtual void ActivarRoom()
         {
-
+            
         }
     }
 }
