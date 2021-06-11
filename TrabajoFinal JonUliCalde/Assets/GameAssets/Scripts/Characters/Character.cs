@@ -10,9 +10,9 @@ namespace enemyStatusConditions
         public delegate void HpDelegate(int hp);
         public event HpDelegate OnHpChange;
 
-        public int maxHp = 100;
+        int maxHp = 100;
         public string name;
-        public int attack;
+        int _attack;
         public float critChance;
         public int poisonedTurns = 0;
         public int maxPoisonedTurns = 0;
@@ -27,6 +27,37 @@ namespace enemyStatusConditions
         private int _hp;
 
         
+
+        public int _maxHp
+        {
+            get { return maxHp; }
+            set
+            {
+                if (value < 100)
+                    maxHp = 100;
+                else if(value >= 100)
+                {
+                    maxHp = value;
+                }
+
+
+            }
+        }
+
+        public int attack
+        {
+            get { return _attack; }
+            set
+            {
+                if (value < 25)
+                    _attack = 25;
+                else
+                    _attack = value;
+            }
+        }
+
+
+
 
         public int hp
         {

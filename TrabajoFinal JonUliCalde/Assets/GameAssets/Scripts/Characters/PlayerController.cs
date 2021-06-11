@@ -55,7 +55,7 @@ namespace enemyStatusConditions
         public void GetBonusMaxHp(int value)
         {
             bonusMaxVida += value; //Solo para testear Debug
-            heroInstance.maxHp += value;
+            heroInstance._maxHp += value;
         }
         public void GetBonusAttack(int value)
         {
